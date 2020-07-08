@@ -15,14 +15,10 @@ const createUser = () => {
         },
         body: JSON.stringify(credentials)
 
-    }).then((result) => {
-        result.json().then((entry) => {
+    })
+};
 
-        });
-    });
-}
-
-//Bereitet die Erstellung eines neuen Benutzers vor
+//Erlaubt einen Login
 const loginUser = () => {
 
     const credentialsLogin = {};
@@ -36,24 +32,20 @@ const loginUser = () => {
         },
         body: JSON.stringify(credentialsLogin)
 
-    }).then((result) => {
-        result.json().then((entry) => {
-
-        });
-    });
-}
+    })
+};
 
 //Erstellt den Login-Button
 const loginActions = () => {
     const loginButton = document.getElementById("loginButton");
    loginButton.addEventListener('click', () => loginUser())
-}
+};
 
 //Erstellt den SignUp-Button
 const signActions = () => {
     const deleteButton = document.getElementById("signButton");
     deleteButton.addEventListener('click', () => createUser())
-}
+};
 
 //Event-Listener bei Laden vom Dokument
 document.addEventListener('DOMContentLoaded', function () {
