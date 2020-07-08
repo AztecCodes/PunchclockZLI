@@ -15,5 +15,9 @@ public class SecurityConstants {
     public static final String LOG_IN_URL = "/login.html";
     public static final String FAVICON_URL = "/*.ico";
     public static final String LOGIN_JS_URL = "/login.js";
+    public static final String SCRIPT_JS_URL = "/script.js";
+    public static final String CSS_URL = "/*.css";
+
+
 
 }

@@ -1,5 +1,5 @@
 
-//Erstellt einen neuen Eintrag
+//Erstellt einen neuen Benutzer
 const createUser = () => {
 
     const credentials = {};
@@ -12,22 +12,31 @@ const createUser = () => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(credentials)
-    }).then((result) => {
-        result.json().then((entry) => {
 
-        });
-    });
+    })
 };
 
-//Erstellt einen neuen Eintrag
+//Bereitet die Erstellung eines neuen Benutzers vor
 const loginUser = () => {
 
+    const credentialsLogin = {};
+    credentialsLogin['username'] = document.getElementById("usernameField").value;
+    credentialsLogin['password'] = document.getElementById("passwordField").value;
+
+    fetch(`${URL}/login`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(credentials)
+
+    })
 };
 
 //Erstellt den Login-Button
 const loginActions = () => {
-    const deleteButton = document.getElementById("loginButton");
-    deleteButton.addEventListener('click', () => loginUser())
+    const loginButton = document.getElementById("loginButton");
+   loginButton.addEventListener('click', () => loginUser())
 }
 
 //Erstellt den SignUp-Button
@@ -38,5 +47,6 @@ const signActions = () => {
 
 //Event-Listener bei Laden vom Dokument
 document.addEventListener('DOMContentLoaded', function () {
+    loginActions();
     signActions();
 });
