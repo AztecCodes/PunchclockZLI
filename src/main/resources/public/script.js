@@ -19,6 +19,7 @@ const createEntry = (e) => {
     entry['checkIn'] = dateAndTimeToDate(formData.get('checkInDate'), formData.get('checkInTime'));
     entry['checkOut'] = dateAndTimeToDate(formData.get('checkOutDate'), formData.get('checkOutTime'));
 
+
     fetch(`${URL}/entries`, {
         method: 'POST',
         headers: {
@@ -63,18 +64,20 @@ const deleteEntry = (id) => {
 const editEntry = (entry) => {
 
    const formData = new FormData(document.getElementById("createEntryForm2"));
-   const entry2 = {};
+   const entryEdit = {};
 
-   entry2['id'] = entry.id;
-   entry2['checkIn'] = dateAndTimeToDate(formData.get('checkInDate2'), formData.get('checkInTime2'));
-   entry2['checkOut'] = dateAndTimeToDate(formData.get('checkOutDate2'), formData.get('checkOutTime2'));
+   entryEdit['id'] = entry.id;
+   entryEdit['checkIn'] = dateAndTimeToDate(formData.get('checkInDate2'), formData.get('checkInTime2'));
+   entryEdit['checkOut'] = dateAndTimeToDate(formData.get('checkOutDate2'), formData.get('checkOutTime2'));
+
+
 
     fetch(`${URL}/entries/${entry.id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(entry2)
+        body: JSON.stringify(entryEdit)
 
     }).then((result) => {
         result.json().then((entry) => {
@@ -103,8 +106,16 @@ const createActions = (entry) => {
 //Zeigt Button und Formular an
 const showButton = (entry) => {
 
+    const formDataShow = new FormData(document.getElementById("createEntryForm2"));
+
+    const checkInField =  document.getElementById('checkIn2').value=entry.checkIn.slice(0,10);
+    const checkOutField =  document.getElementById('checkOut2').value=entry.checkOut.slice(0,10);
+
+
     const form2 = document.getElementById('createEntryForm2').style.display="block";
     const form = document.getElementById('createEntryForm').style.display="none";
+
+
 
     const subButton2 = document.getElementById('subButton2');
     subButton2.addEventListener('click', () => editEntry(entry));
