@@ -24,6 +24,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-jersey'
+	implementation 'com.auth0:auth0-spring-security-api:1.4.0'
+
 
 	//implementation 'org.springframework.boot:spring-boot-starter-security'
 	compile('javax.xml.bind:jaxb-api:2.3.0')
