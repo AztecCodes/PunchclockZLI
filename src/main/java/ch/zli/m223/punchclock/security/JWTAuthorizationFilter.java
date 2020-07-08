@@ -23,6 +23,7 @@ import static ch.zli.m223.punchclock.security.SecurityConstants.TOKEN_PREFIX;
  * @date 07.07.2020
  * @desc JWT Authorisationsfilter
  */
+
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 
     public JWTAuthorizationFilter(AuthenticationManager authManager) {
