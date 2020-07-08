@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @name Mattia Trottmann
  * @date 07.07.2020
- * @desc Script
+ * @desc EntryController
  */
 
 @RestController

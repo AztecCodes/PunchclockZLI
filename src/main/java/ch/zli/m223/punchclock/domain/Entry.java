@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
  *
  * @name Mattia Trottmann
  * @date 07.07.2020
- * @desc Script
+ * @desc Entry Entity
  */
 
 @Entity

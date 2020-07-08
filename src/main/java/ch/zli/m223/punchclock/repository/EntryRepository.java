@@ -4,7 +4,7 @@ package ch.zli.m223.punchclock.repository;
  *
  * @name Mattia Trottmann
  * @date 07.07.2020
- * @desc Script
+ * @desc Repository
  */
 
 import ch.zli.m223.punchclock.domain.Entry;

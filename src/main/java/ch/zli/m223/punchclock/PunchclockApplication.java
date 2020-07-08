@@ -4,7 +4,7 @@ package ch.zli.m223.punchclock;
  *
  * @name Mattia Trottmann
  * @date 07.07.2020
- * @desc Script
+ * @desc App
  */
 
 import org.springframework.boot.SpringApplication;

@@ -5,6 +5,13 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+/**
+ *
+ * @name Mattia Trottmann
+ * @date 07.07.2020
+ * @desc WebConfiguration
+ */
+
 @Configuration
 @Profile("dev")
 public class WebConfiguration implements WebMvcConfigurer {
