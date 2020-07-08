@@ -8,6 +8,13 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+/**
+ *
+ * @name Mattia Trottmann
+ * @date 07.07.2020
+ * @desc Script
+ */
+
 @Entity
 public class Entry {
 

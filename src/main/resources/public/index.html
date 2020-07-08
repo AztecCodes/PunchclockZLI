@@ -17,7 +17,16 @@
             <label for="checkOut">Check out</label>
             <input type="date" name="checkOutDate" id="checkOut" required>
             <input type="time" name="checkOutTime" required>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Save" id="subButton" />
+        </form>
+        <form id="createEntryForm2" >
+            <label for="checkIn2">Check in</label>
+            <input type="date" name="checkInDate2" id="checkIn2" required>
+            <input type="time" name="checkInTime2" required>
+            <label for="checkOut2">Check out</label>
+            <input type="date" name="checkOutDate2" id="checkOut2" required>
+            <input type="time" name="checkOutTime2" required>
+            <input type="submit" value="Edit" id="subButton2" />
         </form>
         <table>
             <thead>
@@ -25,10 +34,13 @@
                     <th>ID</th>
                     <th>Check in</th>
                     <th>Check out</th>
+                    <th>Delete</th>
+                    <th> </th>
+
                 </tr>
             </thead>
             <tbody id="entryDisplay">
-                <tr>
+                <td>
                     <td colspan="3">Loading...</td>
                 </tr>
             </tbody>

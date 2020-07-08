@@ -1,13 +1,20 @@
 const URL = 'http://localhost:8081';
 let entries = [];
+let findEntry = null;
 
+/**
+ *
+ * @name Mattia Trottmann
+ * @date 07.07.2020
+ * @desc Script
+ */
 const dateAndTimeToDate = (dateString, timeString) => {
     return new Date(`${dateString}T${timeString}`).toISOString();
 };
 
 const createEntry = (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
+    const formData = new FormData(document.getElementById("createEntryForm"));
     const entry = {};
     entry['checkIn'] = dateAndTimeToDate(formData.get('checkInDate'), formData.get('checkInTime'));
     entry['checkOut'] = dateAndTimeToDate(formData.get('checkOutDate'), formData.get('checkOutTime'));
@@ -26,6 +33,7 @@ const createEntry = (e) => {
     });
 };
 
+//Zeigt Einträge an
 const indexEntries = () => {
     fetch(`${URL}/entries`, {
         method: 'GET'
@@ -38,13 +46,86 @@ const indexEntries = () => {
     renderEntries();
 };
 
+//Lässt Eintrag löschen
+const deleteEntry = (id) => {
+    fetch(`${URL}/entries/${id}`, {
+        method: 'DELETE'
+    }).then((result) => {
+        indexEntries();
+
+    });
+
+    indexEntries();
+
+}
+
+//Lässt Eintrag bearbeiten
+const editEntry = (entry) => {
+
+   const formData = new FormData(document.getElementById("createEntryForm2"));
+   const entry2 = {};
+
+   entry2['id'] = entry.id;
+   entry2['checkIn'] = dateAndTimeToDate(formData.get('checkInDate2'), formData.get('checkInTime2'));
+   entry2['checkOut'] = dateAndTimeToDate(formData.get('checkOutDate2'), formData.get('checkOutTime2'));
+
+    fetch(`${URL}/entries/${entry.id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(entry2)
+
+    }).then((result) => {
+        result.json().then((entry) => {
+            entries = entries.map((e) => e.id === entry.id ? entry.id : e.id);
+            renderEntries();
+        });
+    });
+
+}
+
 const createCell = (text) => {
     const cell = document.createElement('td');
     cell.innerText = text;
     return cell;
 };
 
+const createActions = (entry) => {
+    const cell = document.createElement('td');
+    const deleteButton = document.createElement("button");
+    deleteButton.innerText = 'Delete';
+    deleteButton.addEventListener('click', () => deleteEntry(entry.id))
+    cell.appendChild(deleteButton);
+    return cell;
+}
+
+//Zeigt Button und Formular an
+const showButton = (entry) => {
+
+    const form2 = document.getElementById('createEntryForm2').style.display="block";
+    const form = document.getElementById('createEntryForm').style.display="none";
+
+    const subButton2 = document.getElementById('subButton2');
+    subButton2.addEventListener('click', () => editEntry(entry));
+}
+
+
+const editActions = (entry) => {
+    findEntry = entry;
+    const cell = document.createElement('td');
+    const editButton = document.createElement("button");
+    editButton.innerText = 'Edit';
+    editButton.addEventListener('click', () => showButton(entry))
+    cell.appendChild(editButton);
+    return cell;
+}
+
+
+
 const renderEntries = () => {
+    const form = document.getElementById('createEntryForm2').style.display="none";
+
     const display = document.querySelector('#entryDisplay');
     display.innerHTML = '';
     entries.forEach((entry) => {
@@ -52,12 +133,22 @@ const renderEntries = () => {
         row.appendChild(createCell(entry.id));
         row.appendChild(createCell(new Date(entry.checkIn).toLocaleString()));
         row.appendChild(createCell(new Date(entry.checkOut).toLocaleString()));
+        row.appendChild(createActions(entry));
+        row.appendChild(editActions(entry));
+
         display.appendChild(row);
     });
 };
 
 document.addEventListener('DOMContentLoaded', function(){
-    const createEntryForm = document.querySelector('#createEntryForm');
-    createEntryForm.addEventListener('submit', createEntry);
+    const createEntryFormButton = document.getElementById("subButton")
+
+   // const createEntryForm2 = document.querySelector('#createEntryForm2');
+
+
+   // createEntryForm2.addEventListener('submit', () => editEntry(findEntry));
+
+   createEntryFormButton.addEventListener('click', createEntry);
+
     indexEntries();
 });

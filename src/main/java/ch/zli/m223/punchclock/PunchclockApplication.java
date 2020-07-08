@@ -1,5 +1,12 @@
 package ch.zli.m223.punchclock;
 
+/**
+ *
+ * @name Mattia Trottmann
+ * @date 07.07.2020
+ * @desc Script
+ */
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

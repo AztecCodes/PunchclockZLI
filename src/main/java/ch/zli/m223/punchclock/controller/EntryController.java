@@ -8,6 +8,13 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+/**
+ *
+ * @name Mattia Trottmann
+ * @date 07.07.2020
+ * @desc Script
+ */
+
 @RestController
 @RequestMapping("/entries")
 public class EntryController {
@@ -28,4 +35,19 @@ public class EntryController {
     public Entry createEntry(@Valid @RequestBody Entry entry) {
         return entryService.createEntry(entry);
     }
+
+    //Delete Request
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteEntry(@PathVariable long id) {
+         entryService.deleteEntry(id);
+    }
+
+    //Edit Request
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void editEntry(@Valid @RequestBody Entry entry) {
+        entryService.editEntry(entry);
+    }
+
 }
