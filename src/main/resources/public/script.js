@@ -111,6 +111,9 @@ const showButton = (entry) => {
     const checkInField =  document.getElementById('checkIn2').value=entry.checkIn.slice(0,10);
     const checkOutField =  document.getElementById('checkOut2').value=entry.checkOut.slice(0,10);
 
+    const checkInTime =  document.getElementById('checkInTime2').value=entry.checkIn.slice(11,);
+    const checkOutTime =  document.getElementById('checkOutTime2').value=entry.checkOut.slice(11,);
+
 
     const form2 = document.getElementById('createEntryForm2').style.display="block";
     const form = document.getElementById('createEntryForm').style.display="none";
