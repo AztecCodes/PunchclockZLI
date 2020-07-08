@@ -1,4 +1,6 @@
 
+const URL = 'http://localhost:8081';
+
 //Erstellt einen neuen Benutzer
 const createUser = () => {
 
@@ -13,8 +15,12 @@ const createUser = () => {
         },
         body: JSON.stringify(credentials)
 
-    })
-};
+    }).then((result) => {
+        result.json().then((entry) => {
+
+        });
+    });
+}
 
 //Bereitet die Erstellung eines neuen Benutzers vor
 const loginUser = () => {
@@ -28,10 +34,14 @@ const loginUser = () => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(credentials)
+        body: JSON.stringify(credentialsLogin)
 
-    })
-};
+    }).then((result) => {
+        result.json().then((entry) => {
+
+        });
+    });
+}
 
 //Erstellt den Login-Button
 const loginActions = () => {
