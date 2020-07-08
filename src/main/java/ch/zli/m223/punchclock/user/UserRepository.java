@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @desc User Repository
  */
 
-public interface UserRepository extends JpaRepository<User, Long> {
-    User findByUsername(String username);
+public interface UserRepository extends JpaRepository<ApplicationUser, Long> {
+    ApplicationUser findByUsername(String username);
 }
