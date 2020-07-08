@@ -1,3 +1,4 @@
+//Variablen
 const URL = 'http://localhost:8081';
 let entries = [];
 let findEntry = null;
@@ -8,10 +9,13 @@ let findEntry = null;
  * @date 07.07.2020
  * @desc Script
  */
+
+//Gibt Datum und Zeit zurück
 const dateAndTimeToDate = (dateString, timeString) => {
     return new Date(`${dateString}T${timeString}`).toISOString();
 };
 
+//Erstellt einen neuen Eintrag
 const createEntry = (e) => {
     e.preventDefault();
     const formData = new FormData(document.getElementById("createEntryForm"));
@@ -70,8 +74,6 @@ const editEntry = (entry) => {
    entryEdit['checkIn'] = dateAndTimeToDate(formData.get('checkInDate2'), formData.get('checkInTime2'));
    entryEdit['checkOut'] = dateAndTimeToDate(formData.get('checkOutDate2'), formData.get('checkOutTime2'));
 
-
-
     fetch(`${URL}/entries/${entry.id}`, {
         method: 'PUT',
         headers: {
@@ -88,12 +90,14 @@ const editEntry = (entry) => {
 
 }
 
+//Erstellt eine Tabellenreihe
 const createCell = (text) => {
     const cell = document.createElement('td');
     cell.innerText = text;
     return cell;
 };
 
+//Erstellt den "Delete"-Button
 const createActions = (entry) => {
     const cell = document.createElement('td');
     const deleteButton = document.createElement("button");
@@ -103,7 +107,7 @@ const createActions = (entry) => {
     return cell;
 }
 
-//Zeigt Button und Formular an
+//Zeigt Button und Formular an und füllt in das Formular dabei automatisch die akutellen Werte
 const showButton = (entry) => {
 
     const formDataShow = new FormData(document.getElementById("createEntryForm2"));
@@ -114,17 +118,14 @@ const showButton = (entry) => {
     const checkInTime =  document.getElementById('checkInTime2').value=entry.checkIn.slice(11,);
     const checkOutTime =  document.getElementById('checkOutTime2').value=entry.checkOut.slice(11,);
 
-
     const form2 = document.getElementById('createEntryForm2').style.display="block";
     const form = document.getElementById('createEntryForm').style.display="none";
-
-
 
     const subButton2 = document.getElementById('subButton2');
     subButton2.addEventListener('click', () => editEntry(entry));
 }
 
-
+//Zeigt "Edit"-Button an
 const editActions = (entry) => {
     findEntry = entry;
     const cell = document.createElement('td');
@@ -135,8 +136,7 @@ const editActions = (entry) => {
     return cell;
 }
 
-
-
+//Rendert alle Werte
 const renderEntries = () => {
     const form = document.getElementById('createEntryForm2').style.display="none";
 
@@ -144,6 +144,7 @@ const renderEntries = () => {
     display.innerHTML = '';
     entries.forEach((entry) => {
         const row = document.createElement('tr');
+
         row.appendChild(createCell(entry.id));
         row.appendChild(createCell(new Date(entry.checkIn).toLocaleString()));
         row.appendChild(createCell(new Date(entry.checkOut).toLocaleString()));
@@ -154,15 +155,13 @@ const renderEntries = () => {
     });
 };
 
+//Event-Listener bei Laden vom Dokument
 document.addEventListener('DOMContentLoaded', function(){
     const createEntryFormButton = document.getElementById("subButton")
-
-   // const createEntryForm2 = document.querySelector('#createEntryForm2');
-
-
-   // createEntryForm2.addEventListener('submit', () => editEntry(findEntry));
-
    createEntryFormButton.addEventListener('click', createEntry);
+
+    // const createEntryForm2 = document.querySelector('#createEntryForm2');
+    // createEntryForm2.addEventListener('submit', () => editEntry(findEntry));
 
     indexEntries();
 });
