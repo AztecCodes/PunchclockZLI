@@ -72,28 +72,52 @@ const editEntry = (entry) => {
     let tempString = "";
     let tempString2 = "";
     let tempString3 = "";
+    let tempStringOut = "";
+    let tempStringOut2 = "";
+    let tempStringOut3 = "";
     let parts = "";
+    let partsOut = "";
     let endString = "";
+    let endStringOut = "";
 
 
-     entryEdit['id'] = entry.id;
+
+    entryEdit['id'] = entry.id;
     entryEdit['checkIn'] = dateAndTimeToDate(formData.get('checkInDate2'), formData.get('checkInTime2'));
     entryEdit['checkOut'] = dateAndTimeToDate(formData.get('checkOutDate2'), formData.get('checkOutTime2'));
 
     let beginString = entryEdit['checkIn'];
+    let beginStringOut = entryEdit['checkOut'];
+
+    //TODO Fix Edit
+
+    /*
+    // For CheckIn
     parts = beginString.split("T");
     tempString = parts[1];
     tempString2 = tempString.split(":");
-    tempString3 = tempString[0];
-    endString = tempString3 + 2;
+    tempString3 = tempString2[0];
+    endString = parseInt(tempString3 + 2);
 
-
-    editEntry['checkIn'] = editEntry['checkIn'].slice(0, 11) +
-        endString
+    entryEdit['checkIn'] =  entryEdit['checkIn'].slice(0, 11) +
+        endString + ":"
         +
-        editEntry['checkIn'].slice(14,  24);
+        entryEdit['checkIn'].slice(14,  24);
+
+    //For CheckOut
+    partsOut = beginStringOut.split("T");
+    tempStringOut = partsOut[1];
+    tempStringOut2 = tempStringOut.split(":");
+    tempStringOut3 = tempStringOut2[0];
+    endStringOut = parseInt(tempStringOut3 + 2);
+
+    entryEdit['checkOut'] =  entryEdit['checkOut'].slice(0, 11) +
+        endStringOut + ":"
+        +
+        entryEdit['checkOut'].slice(14,  24);
 
 
+     */
 
     fetch(`${URL}/entries/${entry.id}`, {
         method: 'PUT',
