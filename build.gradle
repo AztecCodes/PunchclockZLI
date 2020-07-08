@@ -28,6 +28,8 @@ dependencies {
 	//implementation 'org.springframework.boot:spring-boot-starter-security'
 	compile('javax.xml.bind:jaxb-api:2.3.0')
 	compile("org.springframework.boot:spring-boot-starter-security")
+	compile("com.auth0:java-jwt:3.4.0")
+
 
 
 	implementation 'org.springframework.boot:spring-boot-starter-web'
