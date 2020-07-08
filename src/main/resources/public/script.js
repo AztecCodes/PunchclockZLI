@@ -87,12 +87,12 @@ const editEntry = (entry) => {
     tempString3 = tempString[0];
     endString = tempString3 + 2;
 
-/*
-    editEntry['checkIn'] = editEntry['checkIn'].substr(0, 11) +
+
+    editEntry['checkIn'] = editEntry['checkIn'].slice(0, 11) +
         endString
         +
-        editEntry['checkIn'].substr(14,  24);
-*/
+        editEntry['checkIn'].slice(14,  24);
+
 
 
     fetch(`${URL}/entries/${entry.id}`, {
