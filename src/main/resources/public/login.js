@@ -2,6 +2,19 @@
 const URL = 'http://localhost:8081';
 let bearerKey= "";
 
+//Erlaubt einen Login
+const openPunch = () => {
+
+    fetch(`${URL}/index.html`, {
+        method: 'GET',
+        headers: {
+            'Authorization': bearerKey,
+            'Content-Type': 'application/json'
+        },
+
+    })
+};
+
 //Erstellt einen neuen Benutzer
 const createUser = () => {
 
@@ -39,22 +52,12 @@ const loginUser = () => {
         localStorage.setItem("JWT", result.headers.get("Authorization"));
         bearerKey = localStorage.getItem("JWT");
         alert(localStorage.getItem("JWT"));
+        openPunch();
     });
 
 };
 
-//Erlaubt einen Login
-const openPunch = () => {
 
-    fetch(`${URL}/index.html`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(credentialsLogin)
-
-    })
-};
 
 //Erstellt den Login-Button
 const loginActions = () => {

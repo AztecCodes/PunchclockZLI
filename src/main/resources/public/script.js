@@ -2,6 +2,7 @@
 const URL = 'http://localhost:8081';
 let entries = [];
 let findEntry = null;
+let bearerKey = localStorage.getItem("JWT");
 
 /**
  *
@@ -41,6 +42,7 @@ const createEntry = (e) => {
 //Zeigt Einträge an
 const indexEntries = () => {
     fetch(`${URL}/entries`, {
+
         method: 'GET'
     }).then((result) => {
         result.json().then((result) => {
