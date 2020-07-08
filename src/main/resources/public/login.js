@@ -1,5 +1,6 @@
 
 const URL = 'http://localhost:8081';
+let bearerKey= "";
 
 //Erstellt einen neuen Benutzer
 const createUser = () => {
@@ -27,6 +28,25 @@ const loginUser = () => {
 
     fetch(`${URL}/login`, {
         method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(credentialsLogin)
+
+    }).then((result) => {
+
+           bearerKey = result.headers.get("Authorization");
+           alert(result.headers.get("Authorization"));
+
+    });
+
+};
+
+//Erlaubt einen Login
+const openPunch = () => {
+
+    fetch(`${URL}/index.html`, {
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         },
