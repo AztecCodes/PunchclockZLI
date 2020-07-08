@@ -52,7 +52,9 @@ const loginUser = () => {
         localStorage.setItem("JWT", result.headers.get("Authorization"));
         bearerKey = localStorage.getItem("JWT");
         alert(localStorage.getItem("JWT"));
-        openPunch();
+
+        //TODO Open index.html
+       // openPunch();
     });
 
 };
