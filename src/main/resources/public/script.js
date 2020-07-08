@@ -110,8 +110,6 @@ const createActions = (entry) => {
 //Zeigt Button und Formular an und füllt in das Formular dabei automatisch die akutellen Werte
 const showButton = (entry) => {
 
-    const formDataShow = new FormData(document.getElementById("createEntryForm2"));
-
     const checkInField = document.getElementById('checkIn2').value = entry.checkIn.slice(0, 10);
     const checkOutField = document.getElementById('checkOut2').value = entry.checkOut.slice(0, 10);
 
@@ -138,8 +136,8 @@ const editActions = (entry) => {
 
 //Rendert alle Werte
 const renderEntries = () => {
-    const form = document.getElementById('createEntryForm2').style.display = "none";
 
+    const form = document.getElementById('createEntryForm2').style.display = "none";
     const display = document.querySelector('#entryDisplay');
     display.innerHTML = '';
     entries.forEach((entry) => {
@@ -159,9 +157,6 @@ const renderEntries = () => {
 document.addEventListener('DOMContentLoaded', function () {
     const createEntryFormButton = document.getElementById("subButton")
     createEntryFormButton.addEventListener('click', createEntry);
-
-    // const createEntryForm2 = document.querySelector('#createEntryForm2');
-    // createEntryForm2.addEventListener('submit', () => editEntry(findEntry));
 
     indexEntries();
 });

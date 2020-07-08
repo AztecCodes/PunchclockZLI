@@ -3,9 +3,6 @@ package ch.zli.m223.punchclock.service;
 import ch.zli.m223.punchclock.domain.Entry;
 import ch.zli.m223.punchclock.repository.EntryRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
-
-import javax.validation.Valid;
 import java.util.List;
 
 /**
