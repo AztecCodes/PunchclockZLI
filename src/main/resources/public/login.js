@@ -3,8 +3,8 @@
 const createUser = () => {
 
     const credentials = {};
-    credentials['username'] = document.getElementById("usernameField");
-    credentials['password'] = document.getElementById("passwordField");
+    credentials['username'] = document.getElementById("usernameField").value;
+    credentials['password'] = document.getElementById("passwordField").value;
 
     fetch(`${URL}/users/sign-up`, {
         method: 'POST',
@@ -31,7 +31,12 @@ const loginActions = () => {
 }
 
 //Erstellt den SignUp-Button
-const loginActions = () => {
+const signActions = () => {
     const deleteButton = document.getElementById("signButton");
     deleteButton.addEventListener('click', () => createUser())
 }
+
+//Event-Listener bei Laden vom Dokument
+document.addEventListener('DOMContentLoaded', function () {
+    signActions();
+});

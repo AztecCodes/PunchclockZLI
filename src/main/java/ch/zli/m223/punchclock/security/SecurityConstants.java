@@ -13,5 +13,7 @@ public class SecurityConstants {
     public static final String HEADER_STRING = "Authorization";
     public static final String SIGN_UP_URL = "/users/sign-up";
     public static final String LOG_IN_URL = "/login.html";
+    public static final String FAVICON_URL = "/*.ico";
+    public static final String LOGIN_JS_URL = "/login.js";
 
 }
