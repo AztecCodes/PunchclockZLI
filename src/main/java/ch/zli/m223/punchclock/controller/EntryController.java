@@ -18,7 +18,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/entries")
 public class EntryController {
-    private EntryService entryService;
+    private final EntryService entryService;
 
     public EntryController(EntryService entryService) {
         this.entryService = entryService;

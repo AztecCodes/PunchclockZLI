@@ -67,12 +67,12 @@ const deleteEntry = (id) => {
 //Lässt Eintrag bearbeiten
 const editEntry = (entry) => {
 
-   const formData = new FormData(document.getElementById("createEntryForm2"));
-   const entryEdit = {};
+    const formData = new FormData(document.getElementById("createEntryForm2"));
+    const entryEdit = {};
 
-   entryEdit['id'] = entry.id;
-   entryEdit['checkIn'] = dateAndTimeToDate(formData.get('checkInDate2'), formData.get('checkInTime2'));
-   entryEdit['checkOut'] = dateAndTimeToDate(formData.get('checkOutDate2'), formData.get('checkOutTime2'));
+    entryEdit['id'] = entry.id;
+    entryEdit['checkIn'] = dateAndTimeToDate(formData.get('checkInDate2'), formData.get('checkInTime2'));
+    entryEdit['checkOut'] = dateAndTimeToDate(formData.get('checkOutDate2'), formData.get('checkOutTime2'));
 
     fetch(`${URL}/entries/${entry.id}`, {
         method: 'PUT',
@@ -112,14 +112,14 @@ const showButton = (entry) => {
 
     const formDataShow = new FormData(document.getElementById("createEntryForm2"));
 
-    const checkInField =  document.getElementById('checkIn2').value=entry.checkIn.slice(0,10);
-    const checkOutField =  document.getElementById('checkOut2').value=entry.checkOut.slice(0,10);
+    const checkInField = document.getElementById('checkIn2').value = entry.checkIn.slice(0, 10);
+    const checkOutField = document.getElementById('checkOut2').value = entry.checkOut.slice(0, 10);
 
-    const checkInTime =  document.getElementById('checkInTime2').value=entry.checkIn.slice(11,);
-    const checkOutTime =  document.getElementById('checkOutTime2').value=entry.checkOut.slice(11,);
+    const checkInTime = document.getElementById('checkInTime2').value = entry.checkIn.slice(11,);
+    const checkOutTime = document.getElementById('checkOutTime2').value = entry.checkOut.slice(11,);
 
-    const form2 = document.getElementById('createEntryForm2').style.display="block";
-    const form = document.getElementById('createEntryForm').style.display="none";
+    const form2 = document.getElementById('createEntryForm2').style.display = "block";
+    const form = document.getElementById('createEntryForm').style.display = "none";
 
     const subButton2 = document.getElementById('subButton2');
     subButton2.addEventListener('click', () => editEntry(entry));
@@ -138,7 +138,7 @@ const editActions = (entry) => {
 
 //Rendert alle Werte
 const renderEntries = () => {
-    const form = document.getElementById('createEntryForm2').style.display="none";
+    const form = document.getElementById('createEntryForm2').style.display = "none";
 
     const display = document.querySelector('#entryDisplay');
     display.innerHTML = '';
@@ -156,9 +156,9 @@ const renderEntries = () => {
 };
 
 //Event-Listener bei Laden vom Dokument
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function () {
     const createEntryFormButton = document.getElementById("subButton")
-   createEntryFormButton.addEventListener('click', createEntry);
+    createEntryFormButton.addEventListener('click', createEntry);
 
     // const createEntryForm2 = document.querySelector('#createEntryForm2');
     // createEntryForm2.addEventListener('submit', () => editEntry(findEntry));
