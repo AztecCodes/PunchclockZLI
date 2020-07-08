@@ -35,9 +35,10 @@ const loginUser = () => {
 
     }).then((result) => {
 
-           bearerKey = result.headers.get("Authorization");
-           alert(result.headers.get("Authorization"));
 
+        localStorage.setItem("JWT", result.headers.get("Authorization"));
+        bearerKey = localStorage.getItem("JWT");
+        alert(localStorage.getItem("JWT"));
     });
 
 };
