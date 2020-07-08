@@ -1,5 +1,6 @@
 # M223: Punchclock
 Dies ist eine Beispielapplikation für das Modul M223.
+Ich habe sie für meine Bedürfnisse modifiziert.
 
 ## Loslegen
 Folgende Schritte befolgen um loszulegen:
