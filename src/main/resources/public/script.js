@@ -67,12 +67,33 @@ const deleteEntry = (id) => {
 //Lässt Eintrag bearbeiten
 const editEntry = (entry) => {
 
-    const formData = new FormData(document.getElementById("createEntryForm2"));
-    const entryEdit = {};
+    let formData = new FormData(document.getElementById("createEntryForm2"));
+    let entryEdit = {};
+    let tempString = "";
+    let tempString2 = "";
+    let tempString3 = "";
+    let parts = "";
+    let endString = "";
 
-    entryEdit['id'] = entry.id;
+
+     entryEdit['id'] = entry.id;
     entryEdit['checkIn'] = dateAndTimeToDate(formData.get('checkInDate2'), formData.get('checkInTime2'));
     entryEdit['checkOut'] = dateAndTimeToDate(formData.get('checkOutDate2'), formData.get('checkOutTime2'));
+
+    let beginString = entryEdit['checkIn'];
+    parts = beginString.split("T");
+    tempString = parts[1];
+    tempString2 = tempString.split(":");
+    tempString3 = tempString[0];
+    endString = tempString3 + 2;
+
+/*
+    editEntry['checkIn'] = editEntry['checkIn'].substr(0, 11) +
+        endString
+        +
+        editEntry['checkIn'].substr(14,  24);
+*/
+
 
     fetch(`${URL}/entries/${entry.id}`, {
         method: 'PUT',
