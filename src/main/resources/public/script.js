@@ -28,6 +28,7 @@ const createEntry = (e) => {
     fetch(`${URL}/entries`, {
         method: 'POST',
         headers: {
+            'Authorization': bearerKey,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(entry)
@@ -42,8 +43,10 @@ const createEntry = (e) => {
 //Zeigt Einträge an
 const indexEntries = () => {
     fetch(`${URL}/entries`, {
-
-        method: 'GET'
+        method: 'GET',
+        headers: {
+            'Authorization': bearerKey,
+        },
     }).then((result) => {
         result.json().then((result) => {
             entries = result;
@@ -56,7 +59,10 @@ const indexEntries = () => {
 //Lässt Eintrag löschen
 const deleteEntry = (id) => {
     fetch(`${URL}/entries/${id}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+            'Authorization': bearerKey,
+        },
     }).then((result) => {
         indexEntries();
 
@@ -124,6 +130,7 @@ const editEntry = (entry) => {
     fetch(`${URL}/entries/${entry.id}`, {
         method: 'PUT',
         headers: {
+            'Authorization': bearerKey,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(entryEdit)

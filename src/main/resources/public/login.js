@@ -29,8 +29,19 @@ const createUser = () => {
         },
         body: JSON.stringify(credentials)
 
-    })
+    }).then((result) => {
+
+    });
 };
+
+function initXMLHttpRequest(method, url, jwtoken){
+    let xmlHttpRequest = new XMLHttpRequest();
+    xmlHttpRequest.open(method, url);
+    xmlHttpRequest.setRequestHeader('Authorization', jwtoken);
+    xmlHttpRequest.send();
+    window.location.href = url;
+    return xmlHttpRequest;
+}
 
 //Erlaubt einen Login
 const loginUser = () => {
@@ -51,10 +62,12 @@ const loginUser = () => {
 
         localStorage.setItem("JWT", result.headers.get("Authorization"));
         bearerKey = localStorage.getItem("JWT");
-        alert(localStorage.getItem("JWT"));
+       // alert(localStorage.getItem("JWT"));
 
         //TODO Open index.html
-       // openPunch();
+       // initXMLHttpRequest('GET', 'http://localhost:8081/index.html', bearerKey);
+       //openPunch();
+        location.href = 'http://localhost:8081/index.html';
     });
 
 };
