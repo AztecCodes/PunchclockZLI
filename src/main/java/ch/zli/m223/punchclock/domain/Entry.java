@@ -18,6 +18,8 @@ import java.time.LocalDateTime;
 @Entity
 public class Entry {
 
+    //Variablen
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -32,26 +34,47 @@ public class Entry {
     @Column(nullable = false)
     private LocalDateTime checkOut;
 
+    /**
+     * @return Gibt die ID des Eintrags zurück
+     */
     public Long getId() {
         return id;
     }
 
+    /**
+     * Setzt die ID des Eintrags
+     * @param id
+     */
     public void setId(Long id) {
         this.id = id;
     }
 
+    /**
+     * @return Gibt CheckIn-Zeit zurück des Eintrags
+     */
     public LocalDateTime getCheckIn() {
         return checkIn;
     }
 
+    /**
+     * Setzt CheckIn-Zeit des Eintrags des Eintrags
+     * @param checkIn
+     */
     public void setCheckIn(LocalDateTime checkIn) {
         this.checkIn = checkIn;
     }
 
+    /**
+     * @return Gibt CheckOut-Zeit zurück des Eintrags
+     */
     public LocalDateTime getCheckOut() {
         return checkOut;
     }
 
+    /**
+     * Setzt die CheckOut-Zeit des Eintrags
+     * @param checkOut
+     */
     public void setCheckOut(LocalDateTime checkOut) {
         this.checkOut = checkOut;
     }

@@ -33,6 +33,11 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
+    /**
+     * Konfiguriert die Zugriffsrechte
+     * @param http
+     * @throws Exception
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().authorizeRequests()
@@ -43,9 +48,6 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .antMatchers(CSS_URL).permitAll()
                 .antMatchers(ALL_JS_URL).permitAll()
                 .antMatchers(FAVICON_URL).permitAll()
-
-
-
                 //.anyRequest().permitAll()
 
                 .anyRequest().authenticated()

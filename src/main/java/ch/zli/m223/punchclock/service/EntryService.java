@@ -20,18 +20,34 @@ public class EntryService {
         this.entryRepository = entryRepository;
     }
 
+    /**
+     * @param entry
+     * @return Gibt erstellten Eintrag zurück
+     */
     public Entry createEntry(Entry entry) {
         return entryRepository.saveAndFlush(entry);
     }
 
+    /**
+     *
+     * @return Gibt alle Einträge zurück
+     */
     public List<Entry> findAll() {
         return entryRepository.findAll();
     }
 
+    /**
+     * Löscht Eintrag
+     * @param id
+     */
     public void deleteEntry(long id) {
         entryRepository.deleteById(id);
     }
 
+    /**
+     * Bearbeitet Eintrag
+     * @param entry
+     */
     public void editEntry(Entry entry) {
         entryRepository.save(entry);
     }
