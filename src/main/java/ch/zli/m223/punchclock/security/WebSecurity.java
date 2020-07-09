@@ -1,7 +1,7 @@
 package ch.zli.m223.punchclock.security;
 
 
-import ch.zli.m223.punchclock.user.UserDetailsServiceImpl;
+import ch.zli.m223.punchclock.service.UserDetailsServiceImpl;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
