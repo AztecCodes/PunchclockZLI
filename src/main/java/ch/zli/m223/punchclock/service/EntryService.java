@@ -14,8 +14,14 @@ import java.util.List;
 
 @Service
 public class EntryService {
+
+    //Variablen
     private final EntryRepository entryRepository;
 
+    /**
+     * Repository Methode
+     * @param entryRepository
+     */
     public EntryService(EntryRepository entryRepository) {
         this.entryRepository = entryRepository;
     }

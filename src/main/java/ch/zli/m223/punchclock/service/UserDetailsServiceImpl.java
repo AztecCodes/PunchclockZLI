@@ -18,8 +18,14 @@ import static java.util.Collections.emptyList;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
+
+    //Variablen
     private final UserRepository userRepository;
 
+    /**
+     * Repository Methode
+     * @param applicationUserRepository
+     */
     public UserDetailsServiceImpl(UserRepository applicationUserRepository) {
         this.userRepository = applicationUserRepository;
     }

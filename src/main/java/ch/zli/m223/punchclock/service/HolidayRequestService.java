@@ -1,5 +1,8 @@
 package ch.zli.m223.punchclock.service;
 
+import ch.zli.m223.punchclock.repository.EntryRepository;
+import ch.zli.m223.punchclock.repository.HolidayRequestRepository;
+
 /**
  * @name Mattia Trottmann
  * @date 09.07.2020
@@ -7,5 +10,8 @@ package ch.zli.m223.punchclock.service;
  */
 
 public class HolidayRequestService {
+
+    //Variablen
+    private HolidayRequestRepository holidayRequestRepository;
 
 }
