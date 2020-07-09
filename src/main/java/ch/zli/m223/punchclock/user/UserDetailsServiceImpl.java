@@ -1,5 +1,6 @@
 package ch.zli.m223.punchclock.user;
 
+import ch.zli.m223.punchclock.repository.UserRepository;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
