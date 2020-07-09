@@ -89,7 +89,6 @@ const editEntry = (entry) => {
     let endStringOut = "";
 
 
-
     entryEdit['id'] = entry.id;
     entryEdit['checkIn'] = dateAndTimeToDate(formData.get('checkInDate2'), formData.get('checkInTime2'));
     entryEdit['checkOut'] = dateAndTimeToDate(formData.get('checkOutDate2'), formData.get('checkOutTime2'));
@@ -136,9 +135,14 @@ const editEntry = (entry) => {
         body: JSON.stringify(entryEdit)
 
     }).then((result) => {
-        result.json().then((entry) => {
-            entries = entries.map((e) => e.id === entry.id ? entry.id : e.id);
-            renderEntries();
+        location.href = 'http://localhost:8081/index.html';
+
+        result.json().then((entryEdit) => {
+
+            entries = entries.map((e) => e.id === entryEdit.id ? entryEdit.id : e.id);
+
+            indexEntries();
+
         });
     });
 
