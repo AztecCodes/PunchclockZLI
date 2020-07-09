@@ -24,26 +24,39 @@ public class EntryController {
         this.entryService = entryService;
     }
 
+    /**
+     * @return Gibt alle Einträge zurück
+     */
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Entry> getAllEntries() {
         return entryService.findAll();
     }
 
+    /**
+     * @param entry
+     * @return Gibt erstellten Eintrag zurück
+     */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Entry createEntry(@Valid @RequestBody Entry entry) {
         return entryService.createEntry(entry);
     }
 
-    //Delete Request
+    /**
+     * Anfrage zur Löschung eines Eintrags
+     * @param id
+     */
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteEntry(@PathVariable long id) {
          entryService.deleteEntry(id);
     }
 
-    //Edit Request
+    /**
+     * Lässt Eintrag bearbeiten
+     * @param entry
+     */
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     public void editEntry(@Valid @RequestBody Entry entry) {

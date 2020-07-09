@@ -19,7 +19,6 @@ import java.time.LocalDateTime;
 
 public class HolidayRequest {
 
-
     //Variablen
 
     @Id

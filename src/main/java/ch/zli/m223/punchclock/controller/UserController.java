@@ -19,15 +19,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/users")
 public class UserController {
 
+    //Variablen
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    /**
+     * Controller des Users
+     * @param userRepository
+     * @param bCryptPasswordEncoder
+     */
     public UserController(UserRepository userRepository,
                           BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userRepository = userRepository;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
+    /**
+     * Methode zur Registrierung eines Benutzerkontos
+     * @param user
+     */
     @PostMapping("/sign-up")
     public void signUp(@RequestBody ApplicationUser user) {
         if(userRepository.findByUsername(user.getUsername()) == null) {
