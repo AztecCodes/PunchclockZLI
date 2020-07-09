@@ -26,14 +26,14 @@ public class Job {
     private short hourlySalary;
 
     /**
-     * @return Gibt die ID des Eintrags zurück
+     * @return Gibt die ID des Jobs zurück
      */
     public Long getId() {
         return id;
     }
 
     /**
-     * Setzt die ID des Eintrags
+     * Setzt die ID des Jobs
      * @param id
      */
     public void setId(Long id) {
@@ -41,14 +41,14 @@ public class Job {
     }
 
     /**
-     * @return Gibt CheckIn-Zeit zurück des Eintrags
+     * @return Gibt Job-Titel zurück
      */
     public String getJobTitle() {
         return jobTitle;
     }
 
     /**
-     * Setzt CheckIn-Zeit des Eintrags des Eintrags
+     * Setzt Job-Titel
      * @param jobTitle
      */
     public void setJobTitle(String jobTitle) {
@@ -56,14 +56,14 @@ public class Job {
     }
 
     /**
-     * @return Gibt CheckOut-Zeit zurück des Eintrags
+     * @return Gibt stündlichen Lohn zurück
      */
     public short getHourlySalary() {
         return hourlySalary;
     }
 
     /**
-     * Setzt die CheckOut-Zeit des Eintrags
+     * Setzt stündlichen Lohn
      * @param hourlySalary
      */
     public void setCheckOut(short hourlySalary) {
