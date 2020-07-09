@@ -31,7 +31,7 @@ import static ch.zli.m223.punchclock.security.SecurityConstants.TOKEN_PREFIX;
  */
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
-    private AuthenticationManager authenticationManager;
+    private final AuthenticationManager authenticationManager;
 
     public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
         this.authenticationManager = authenticationManager;
