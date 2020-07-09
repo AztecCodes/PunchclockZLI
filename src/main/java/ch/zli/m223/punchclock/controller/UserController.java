@@ -1,7 +1,7 @@
 package ch.zli.m223.punchclock.controller;
 
-import ch.zli.m223.punchclock.repository.UserRepository;
 import ch.zli.m223.punchclock.domain.ApplicationUser;
+import ch.zli.m223.punchclock.repository.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

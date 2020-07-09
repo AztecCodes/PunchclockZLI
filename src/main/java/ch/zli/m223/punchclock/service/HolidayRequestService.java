@@ -1,6 +1,5 @@
 package ch.zli.m223.punchclock.service;
 
-import ch.zli.m223.punchclock.repository.EntryRepository;
 import ch.zli.m223.punchclock.repository.HolidayRequestRepository;
 
 /**

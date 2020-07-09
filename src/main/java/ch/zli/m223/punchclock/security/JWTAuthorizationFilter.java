@@ -14,9 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static ch.zli.m223.punchclock.security.SecurityConstants.HEADER_STRING;
-import static ch.zli.m223.punchclock.security.SecurityConstants.SECRET;
-import static ch.zli.m223.punchclock.security.SecurityConstants.TOKEN_PREFIX;
+import static ch.zli.m223.punchclock.security.SecurityConstants.*;
 
 /**
  * @name Mattia Trottmann

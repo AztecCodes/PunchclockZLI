@@ -18,11 +18,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
+import static ch.zli.m223.punchclock.security.SecurityConstants.*;
 import static com.auth0.jwt.algorithms.Algorithm.HMAC512;
-import static ch.zli.m223.punchclock.security.SecurityConstants.EXPIRATION_TIME;
-import static ch.zli.m223.punchclock.security.SecurityConstants.HEADER_STRING;
-import static ch.zli.m223.punchclock.security.SecurityConstants.SECRET;
-import static ch.zli.m223.punchclock.security.SecurityConstants.TOKEN_PREFIX;
 
 /**
  * @name Mattia Trottmann
