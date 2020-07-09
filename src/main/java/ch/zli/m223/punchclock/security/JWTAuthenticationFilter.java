@@ -1,6 +1,6 @@
 package ch.zli.m223.punchclock.security;
 
-import ch.zli.m223.punchclock.user.ApplicationUser;
+import ch.zli.m223.punchclock.domain.ApplicationUser;
 import com.auth0.jwt.JWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.security.authentication.AuthenticationManager;

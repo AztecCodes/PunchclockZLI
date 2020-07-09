@@ -1,4 +1,4 @@
-package ch.zli.m223.punchclock.user;
+package ch.zli.m223.punchclock.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
