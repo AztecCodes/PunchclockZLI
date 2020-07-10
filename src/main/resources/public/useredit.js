@@ -42,6 +42,7 @@ const deleteUser = () => {
 
         }).then((result) => {
             alert("Benutzerprofil gelöscht!");
+            location.href = 'http://localhost:8081/login.html';
         });
     }
 };
@@ -67,6 +68,7 @@ const changePassword = () => {
         }).then((result) => {
             result.json().then((result) => {
                 alert("passed");
+                location.href = 'http://localhost:8081/login.html';
             });
         });
     } else {
