@@ -30,7 +30,7 @@ public class HolidayRequestService {
      * @param holidayRequest
      * @return Gibt erstellten Anträge zurück
      */
-    public HolidayRequest createHoliday(HolidayRequest holidayRequest) {
+    public HolidayRequest createHolidayRequest(HolidayRequest holidayRequest) {
         return holidayRequestRepository.saveAndFlush(holidayRequest);
     }
 
