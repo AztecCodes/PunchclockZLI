@@ -1,6 +1,8 @@
 const URL = 'http://localhost:8081';
 let bearerKey = "";
 let saveUsername = "";
+let selectedJob = "";
+
 
 let job1 = {};
 
@@ -82,7 +84,7 @@ const loginUser = () => {
     const credentialsLogin = {};
     credentialsLogin['username'] = document.getElementById("usernameField").value;
     credentialsLogin['password'] = document.getElementById("passwordField").value;
-    const job = document.getElementById("jobSpinner").value;
+    selectedJob = document.getElementById("jobSpinner").value;
 
     fetch(`${URL}/login`, {
         method: 'POST',
@@ -94,7 +96,8 @@ const loginUser = () => {
     }).then((result) => {
 
         localStorage.setItem("savedUsername",  credentialsLogin['username']);
-        localStorage.setItem("savedJob",  credentialsLogin['job']);
+        localStorage.setItem("savedJob", selectedJob);
+        alert(selectedJob);
         localStorage.setItem("JWT", result.headers.get("Authorization"));
 
         bearerKey = localStorage.getItem("JWT");

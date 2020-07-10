@@ -26,16 +26,17 @@
     <input type="time" name="checkOutTime" required>
     <input type="submit" value="Speichern" id="subButton"/>
     <br>
-    <input type="button" value="Stelle ein Urlaubsgesuch" id="holidayRequest"
-           onclick="location.href='http://localhost:8081/holiday.html'"/>
-    <br>
-    <input type="button" value="Benutzerverwaltung" id="userEdit"
-           onclick="location.href='http://localhost:8081/useredit.html'"/>
 
-    <input type="button" value="Gesamten Lohn anzeigen" id="showPayment"
-           onclick="location.href='http://localhost:8081/useredit.html'"/>
 
 </form>
+<input type="button" value="Stelle ein Urlaubsgesuch" id="holidayRequest"
+       onclick="location.href='http://localhost:8081/holiday.html'"/>
+<br>
+<input type="button" value="Benutzerverwaltung" id="userEdit"
+       onclick="location.href='http://localhost:8081/useredit.html'"/>
+<br>
+<label id="hourlyPayment">Lohn:</label>
+<input type="button" value="Gesamten Lohn anzeigen" id="showPayment"/>
 <form id="createEntryForm2">
     <label for="checkIn2">Check in</label>
     <input type="date" name="checkInDate2" id="checkIn2" required>

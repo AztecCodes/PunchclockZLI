@@ -3,6 +3,8 @@ const URL = 'http://localhost:8081';
 let entries = [];
 let findEntry = null;
 let bearerKey = localStorage.getItem("JWT");
+let jobTitel = localStorage.getItem("savedJob");
+
 
 /**
  *
@@ -50,9 +52,11 @@ const indexEntries = () => {
     }).then((result) => {
         result.json().then((result) => {
             entries = result;
+
             renderEntries();
         });
     });
+
     renderEntries();
 };
 
@@ -69,6 +73,29 @@ const deleteEntry = (id) => {
     });
 
     indexEntries();
+
+}
+
+const zeigeLohn = () => {
+    let lohn = 0;
+    alert(jobTitel);
+    if (jobTitel === "Informatiker") {
+        lohn = 125;
+    }
+    else if (jobTitel === "Architekt") {
+        lohn = 100;
+    }
+     else if (jobTitel === "Fotograf") {
+        lohn = 10;
+    }
+     else if (jobTitel === "Designer") {
+    lohn = 100;
+    }
+     else {
+        lohn = 250;
+    }
+
+    const paymentField = document.getElementById("hourlyPayment").innerHTML= "Lohn: " + lohn + "/Stunde";
 
 }
 
@@ -192,6 +219,7 @@ const editActions = (entry) => {
     return cell;
 }
 
+
 //Rendert alle Werte
 const renderEntries = () => {
 
@@ -215,6 +243,8 @@ const renderEntries = () => {
 document.addEventListener('DOMContentLoaded', function () {
     const createEntryFormButton = document.getElementById("subButton")
     createEntryFormButton.addEventListener('click', createEntry);
+
+    zeigeLohn();
 
     indexEntries();
 });
