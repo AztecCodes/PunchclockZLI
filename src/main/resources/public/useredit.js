@@ -5,7 +5,7 @@ let findEntry = null;
 let bearerKey = localStorage.getItem("JWT");
 let id = 16;
 
-//Zeigt Einträge an
+//Zeigt Benutzerprofile an
 const indexUsers = () => {
     fetch(`${URL}/users`, {
         method: 'GET',
@@ -30,18 +30,20 @@ const indexUsers = () => {
 //Löscht einen Benutzer
 const deleteUser = () => {
 
-    fetch(`${URL}/users/${id}`, {
-        method: 'DELETE',
-        headers: {
-            'Authorization': bearerKey,
-        },
+    if (confirm('Delete Account?')) {
+        fetch(`${URL}/users/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': bearerKey,
+            },
 
-    }).then((result) => {
-        alert("Benutzerprofil gelöscht!");
-    });
+        }).then((result) => {
+            alert("Benutzerprofil gelöscht!");
+        });
+    }
 };
 
-//Erstellt einen neuen Eintrag
+//Wechselt das Passwort
 const changePassword = () => {
 
     const getUsername = localStorage.getItem("savedUsername");
@@ -52,18 +54,23 @@ const changePassword = () => {
     credentials['password'] = document.getElementById("passwordField").value;
     const confirmPassword = document.getElementById("passwordConfirm").value;
 
-    fetch(`${URL}/users/change`, {
-        method: 'PUT',
-        headers: {
-            'Authorization': bearerKey,
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(credentials)
-    }).then((result) => {
-        result.json().then((result) => {
-            alert("passed");
+    if (confirm('Change Password?')) {
+        fetch(`${URL}/users/change`, {
+            method: 'PUT',
+            headers: {
+                'Authorization': bearerKey,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(credentials)
+        }).then((result) => {
+            result.json().then((result) => {
+                alert("passed");
+            });
         });
-    });
+    } else {
+
+    }
+
 };
 
 //Event-Listener bei Laden vom Dokument

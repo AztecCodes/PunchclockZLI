@@ -76,9 +76,10 @@ const deleteEntry = (id) => {
 
 }
 
+//Zeigt stündlichen Lohn
 const zeigeLohn = () => {
     let lohn = 0;
-    alert(jobTitel);
+
     if (jobTitel === "Informatiker") {
         lohn = 125;
     }

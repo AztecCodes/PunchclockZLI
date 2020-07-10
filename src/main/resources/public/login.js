@@ -1,3 +1,4 @@
+//Variablen
 const URL = 'http://localhost:8081';
 let bearerKey = "";
 let saveUsername = "";
@@ -63,7 +64,7 @@ const createUser = () => {
     });
 };
 
-//Erstellt einen neuen Benutzer
+//Erstellt einen neuen Job
 const createJobs= (job) => {
 
     fetch(`${URL}/jobs/create`, {
@@ -97,7 +98,6 @@ const loginUser = () => {
 
         localStorage.setItem("savedUsername",  credentialsLogin['username']);
         localStorage.setItem("savedJob", selectedJob);
-        alert(selectedJob);
         localStorage.setItem("JWT", result.headers.get("Authorization"));
 
         bearerKey = localStorage.getItem("JWT");
