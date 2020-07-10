@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * @name Mattia Trottmann
+ * @author Mattia Trottmann
  * @date 07.07.2020
  * @desc WebConfiguration
  */

@@ -1,3 +1,7 @@
+/**
+ * JavaScript für Hauptverwaltung
+ */
+
 //Variablen
 const URL = 'http://localhost:8081';
 let entries = [];
@@ -96,8 +100,43 @@ const zeigeLohn = () => {
         lohn = 250;
     }
 
-    const paymentField = document.getElementById("hourlyPayment").innerHTML= "Lohn: " + lohn + "/Stunde";
+    const paymentField = document.getElementById("hourlyPayment").innerHTML= "Lohn: " + lohn + "/Stunde" + " 42 Stunden/Woche";
 
+}
+
+//Berechnet mittels Einträgen den insgesamten Lohn
+const showPayment = () => {
+    let lohnInsgesamt = 0;
+    let checkIn = 0;
+    let checkOut = 0;
+    let tempArray = {};
+    let tempArrayOut = {};
+
+    let tempCheckInDate = {};
+    let tempCheckInTime = {};
+    let tempCheckOutDate = {};
+    let tempCheckOutTime = {};
+
+    let tempArray2 = {};
+
+    let temp
+
+    entries.forEach((entry) => {
+        checkIn = entry.checkIn;
+        checkOut = entry.checkOut;
+
+        tempArray = checkIn.split("T");
+        tempCheckInDate = tempArray[0];
+        tempCheckInTime = tempArray[1];
+
+        tempArrayOut = checkOut.split("T");
+        tempCheckOutDate = tempArrayOut[0];
+        tempCheckOutTime = tempArrayOut[1];
+
+        tempArray2 = tempCheckInDate.split("-");
+
+
+    });
 }
 
 //Lässt Eintrag bearbeiten
@@ -244,6 +283,7 @@ const renderEntries = () => {
 document.addEventListener('DOMContentLoaded', function () {
     const createEntryFormButton = document.getElementById("subButton")
     createEntryFormButton.addEventListener('click', createEntry);
+    document.getElementById("showPayment").disabled = true;
 
     zeigeLohn();
 

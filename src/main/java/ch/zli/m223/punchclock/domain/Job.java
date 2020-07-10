@@ -3,7 +3,7 @@ package ch.zli.m223.punchclock.domain;
 import javax.persistence.*;
 
 /**
- * @name Mattia Trottmann
+ * @author Mattia Trottmann
  * @date 09.07.2020
  * @desc Entität Job
  */

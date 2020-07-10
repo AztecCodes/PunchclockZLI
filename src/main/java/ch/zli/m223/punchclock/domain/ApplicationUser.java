@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * @name Mattia Trottmann
+ * @author Mattia Trottmann
  * @date 07.07.2020
  * @desc User Klasse Datenbank
  */

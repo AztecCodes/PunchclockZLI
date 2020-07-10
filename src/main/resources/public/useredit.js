@@ -1,3 +1,7 @@
+/**
+ * JavaScript für Benutzerverwaltung
+ */
+
 //Variablen
 const URL = 'http://localhost:8081';
 let users = [];
@@ -52,7 +56,6 @@ const changePassword = () => {
 
     credentials['username'] = getUsername;
     credentials['password'] = document.getElementById("passwordField").value;
-    const confirmPassword = document.getElementById("passwordConfirm").value;
 
     if (confirm('Change Password?')) {
         fetch(`${URL}/users/change`, {

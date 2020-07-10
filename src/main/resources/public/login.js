@@ -1,3 +1,7 @@
+/**
+ * JavaScript für Login-Seite
+ */
+
 //Variablen
 const URL = 'http://localhost:8081';
 let bearerKey = "";

@@ -1,3 +1,7 @@
+/**
+ * JavaScript für Ferienantrag
+ */
+
 //Variablen
 const URL = 'http://localhost:8081';
 let requests = [];

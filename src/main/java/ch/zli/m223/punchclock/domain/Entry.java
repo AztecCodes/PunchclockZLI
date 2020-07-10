@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /**
- * @name Mattia Trottmann
+ * @author Mattia Trottmann
  * @date 07.07.2020
  * @desc Entry Entity
  */
