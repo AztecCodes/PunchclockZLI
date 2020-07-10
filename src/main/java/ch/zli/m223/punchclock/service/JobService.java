@@ -4,6 +4,7 @@ import ch.zli.m223.punchclock.domain.HolidayRequest;
 import ch.zli.m223.punchclock.domain.Job;
 import ch.zli.m223.punchclock.repository.HolidayRequestRepository;
 import ch.zli.m223.punchclock.repository.JobRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * @desc Service für Job-Klasse
  */
 
+@Service
 public class JobService {
 
     //Variablen

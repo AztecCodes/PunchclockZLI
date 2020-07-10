@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @name Mattia Trottmann
@@ -14,7 +18,8 @@ import java.util.List;
  * @desc Controller für Entität HolidayRequest
  */
 
-
+@RestController
+@RequestMapping("/holidayrequests")
 public class HolidayRequestController {
     private final HolidayRequestService holidayRequestService;
 
