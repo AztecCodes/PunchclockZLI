@@ -6,9 +6,31 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Holiday Request</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="holiday.js" type="application/javascript"></script>
 </head>
 <body>
+    <form id="holidayForm">
+        <label for="location">Location:</label>
+        <input type="text" name="locationText" id="location" required>
+        <br>
+        <label for="checkIn">Start</label>
+        <input type="date" name="checkInDate" id="checkIn" required>
+        <input type="time" name="checkInTime" required>
 
+        <label for="checkOut">End</label>
+        <input type="date" name="checkOutDate" id="checkOut" required>
+        <input type="time" name="checkOutTime" required>
+        <br>
+        <label for="paid">Paid?</label>
+        <select name="paid" id="paid">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+        <br>        <br>
+
+
+        <input type="button" value="Send Request" id="holidayRequest"  />
+    </form>
 </body>
 </html>
