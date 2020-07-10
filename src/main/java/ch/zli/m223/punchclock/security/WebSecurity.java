@@ -35,6 +35,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 
     /**
      * Konfiguriert die Zugriffsrechte
+     *
      * @param http
      * @throws Exception
      */

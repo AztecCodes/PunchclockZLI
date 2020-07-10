@@ -31,7 +31,6 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     private final AuthenticationManager authenticationManager;
 
     /**
-     *
      * @param authenticationManager
      */
     public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
@@ -40,6 +39,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
     /**
      * Methode zum Versuch der Authentifizierung
+     *
      * @param req
      * @param res
      * @return
@@ -65,6 +65,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
     /**
      * Methode für erfolgreiche Authentifizierung
+     *
      * @param req
      * @param res
      * @param chain

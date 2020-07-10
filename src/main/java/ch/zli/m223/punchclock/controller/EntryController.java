@@ -9,7 +9,6 @@ import javax.validation.Valid;
 import java.util.List;
 
 /**
- *
  * @name Mattia Trottmann
  * @date 07.07.2020
  * @desc EntryController
@@ -45,16 +44,18 @@ public class EntryController {
 
     /**
      * Anfrage zur Löschung eines Eintrags
+     *
      * @param id
      */
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteEntry(@PathVariable long id) {
-         entryService.deleteEntry(id);
+        entryService.deleteEntry(id);
     }
 
     /**
      * Lässt Eintrag bearbeiten
+     *
      * @param entry
      */
     @PutMapping("/{id}")

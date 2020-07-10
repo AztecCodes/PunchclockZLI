@@ -32,6 +32,7 @@ public class Job {
 
     /**
      * Setzt die ID des Jobs
+     *
      * @param id
      */
     public void setId(Long id) {
@@ -47,6 +48,7 @@ public class Job {
 
     /**
      * Setzt Job-Titel
+     *
      * @param jobTitle
      */
     public void setJobTitle(String jobTitle) {
@@ -62,6 +64,7 @@ public class Job {
 
     /**
      * Setzt stündlichen Lohn
+     *
      * @param hourlySalary
      */
     public void setCheckOut(short hourlySalary) {

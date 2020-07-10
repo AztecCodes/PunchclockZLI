@@ -1,19 +1,12 @@
 package ch.zli.m223.punchclock.controller;
 
-import ch.zli.m223.punchclock.domain.HolidayRequest;
 import ch.zli.m223.punchclock.domain.Job;
-import ch.zli.m223.punchclock.service.HolidayRequestService;
 import ch.zli.m223.punchclock.service.JobService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @name Mattia Trottmann
@@ -29,6 +22,7 @@ public class JobController {
 
     /**
      * Konstruktor
+     *
      * @param jobService
      */
     public JobController(JobService jobService) {
@@ -56,6 +50,7 @@ public class JobController {
 
     /**
      * Anfrage zur Löschung eines Job-Profils
+     *
      * @param id
      */
     @DeleteMapping("/{id}")
@@ -66,6 +61,7 @@ public class JobController {
 
     /**
      * Lässt Antrag bearbeiten
+     *
      * @param job
      */
     @PutMapping("/{id}")

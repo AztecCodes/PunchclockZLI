@@ -1,7 +1,6 @@
 package ch.zli.m223.punchclock.service;
 
 import ch.zli.m223.punchclock.domain.ApplicationUser;
-import ch.zli.m223.punchclock.domain.Entry;
 import ch.zli.m223.punchclock.repository.UserRepository;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -27,6 +26,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     /**
      * Repository Methode
+     *
      * @param applicationUserRepository
      */
     public UserDetailsServiceImpl(UserRepository applicationUserRepository) {
@@ -35,6 +35,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     /**
      * Findet User mittels Benutzername
+     *
      * @param username
      * @return Gibt die Benutzerdetails zurück
      * @throws UsernameNotFoundException
@@ -50,7 +51,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
 
     /**
-     *
      * @return Gibt alle Benutzer zurück
      */
     public List<ApplicationUser> findAll() {
@@ -59,6 +59,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     /**
      * Löscht Benutzer
+     *
      * @param id
      */
     public void deleteUser(long id) {
@@ -67,6 +68,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     /**
      * Bearbeitet Eintrag
+     *
      * @param user
      */
     public void editUser(ApplicationUser user) {

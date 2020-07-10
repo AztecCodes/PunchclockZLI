@@ -1,8 +1,6 @@
 package ch.zli.m223.punchclock.service;
 
-import ch.zli.m223.punchclock.domain.Entry;
 import ch.zli.m223.punchclock.domain.HolidayRequest;
-import ch.zli.m223.punchclock.repository.EntryRepository;
 import ch.zli.m223.punchclock.repository.HolidayRequestRepository;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +20,7 @@ public class HolidayRequestService {
 
     /**
      * Repository Methode
+     *
      * @param holidayRequestRepository
      */
     public HolidayRequestService(HolidayRequestRepository holidayRequestRepository) {
@@ -45,6 +44,7 @@ public class HolidayRequestService {
 
     /**
      * Löscht Eintrag
+     *
      * @param id
      */
     public void deleteHolidayRequest(long id) {
@@ -53,6 +53,7 @@ public class HolidayRequestService {
 
     /**
      * Bearbeitet Eintrag
+     *
      * @param holidayRequest
      */
     public void editHolidayRequest(HolidayRequest holidayRequest) {

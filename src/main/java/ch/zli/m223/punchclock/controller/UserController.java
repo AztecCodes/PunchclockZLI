@@ -1,7 +1,6 @@
 package ch.zli.m223.punchclock.controller;
 
 import ch.zli.m223.punchclock.domain.ApplicationUser;
-import ch.zli.m223.punchclock.domain.Entry;
 import ch.zli.m223.punchclock.repository.UserRepository;
 import ch.zli.m223.punchclock.service.UserDetailsServiceImpl;
 import org.springframework.http.HttpStatus;
@@ -29,6 +28,7 @@ public class UserController {
 
     /**
      * Controller des Users
+     *
      * @param userRepository
      * @param bCryptPasswordEncoder
      */
@@ -51,37 +51,39 @@ public class UserController {
 
     /**
      * Methode zur Registrierung eines Benutzerkontos
+     *
      * @param user
      */
     @PostMapping("/sign-up")
     public void signUp(@RequestBody ApplicationUser user) {
 
         //Überprüfung ob Benutzer existiert bei Erstellung überprüfen
-        if(userRepository.findByUsername(user.getUsername()) == null) {
+        if (userRepository.findByUsername(user.getUsername()) == null) {
             user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
             userRepository.save(user);
-        }
-        else{
+        } else {
             System.out.println("User already exists!");
         }
     }
 
     /**
      * Methode zur Änderung des Passworts
+     *
      * @param user
      */
     @PostMapping("/change")
     @ResponseStatus(HttpStatus.OK)
     public void changePassword(@RequestBody ApplicationUser user) {
 
-            userRepository.delete(user);
-            user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-            userRepository.save(user);
+        userRepository.delete(user);
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        userRepository.save(user);
 
     }
 
     /**
      * Anfrage zur Löschung eines Benutzerprofils
+     *
      * @param id
      */
     @DeleteMapping("/{id}")
@@ -92,6 +94,7 @@ public class UserController {
 
     /**
      * Lässt Benutzer bearbeiten
+     *
      * @param user
      */
     @PutMapping("/{id}")

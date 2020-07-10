@@ -1,6 +1,5 @@
-
 const URL = 'http://localhost:8081';
-let bearerKey= "";
+let bearerKey = "";
 
 //Erlaubt einen Login
 const openPunch = () => {
@@ -34,7 +33,7 @@ const createUser = () => {
     });
 };
 
-function initXMLHttpRequest(method, url, jwtoken){
+function initXMLHttpRequest(method, url, jwtoken) {
     let xmlHttpRequest = new XMLHttpRequest();
     xmlHttpRequest.open(method, url);
     xmlHttpRequest.setRequestHeader('Authorization', jwtoken);
@@ -62,22 +61,21 @@ const loginUser = () => {
 
         localStorage.setItem("JWT", result.headers.get("Authorization"));
         bearerKey = localStorage.getItem("JWT");
-       // alert(localStorage.getItem("JWT"));
+        // alert(localStorage.getItem("JWT"));
 
         //TODO Open index.html
-       // initXMLHttpRequest('GET', 'http://localhost:8081/index.html', bearerKey);
-       //openPunch();
+        // initXMLHttpRequest('GET', 'http://localhost:8081/index.html', bearerKey);
+        //openPunch();
         location.href = 'http://localhost:8081/index.html';
     });
 
 };
 
 
-
 //Erstellt den Login-Button
 const loginActions = () => {
     const loginButton = document.getElementById("loginButton");
-   loginButton.addEventListener('click', () => loginUser())
+    loginButton.addEventListener('click', () => loginUser())
 };
 
 //Erstellt den SignUp-Button

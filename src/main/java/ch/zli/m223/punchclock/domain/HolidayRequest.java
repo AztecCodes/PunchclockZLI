@@ -48,6 +48,7 @@ public class HolidayRequest {
 
     /**
      * Setzt die ID des Antrags
+     *
      * @param id
      */
     public void setId(Long id) {
@@ -63,6 +64,7 @@ public class HolidayRequest {
 
     /**
      * Setzt Ortschaft des Ferienantrags
+     *
      * @param location
      */
     public void setLocation(String location) {
@@ -78,6 +80,7 @@ public class HolidayRequest {
 
     /**
      * Setzt CheckIn-Zeit des Antrags
+     *
      * @param checkIn
      */
     public void setCheckIn(LocalDateTime checkIn) {
@@ -93,6 +96,7 @@ public class HolidayRequest {
 
     /**
      * Setzt die CheckOut-Zeit des Antrags
+     *
      * @param checkOut
      */
     public void setCheckOut(LocalDateTime checkOut) {
@@ -108,9 +112,10 @@ public class HolidayRequest {
 
     /**
      * Setzt ob Antrag bezahlt oder nicht bezahlt sein soll
+     *
      * @param paid
      */
-    public void setPaid(boolean paid){
+    public void setPaid(boolean paid) {
         this.paid = paid;
     }
 }

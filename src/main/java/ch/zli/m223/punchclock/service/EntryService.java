@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- *
  * @name Mattia Trottmann
  * @date 07.07.2020
  * @desc EntryService
@@ -21,6 +20,7 @@ public class EntryService {
 
     /**
      * Repository Methode
+     *
      * @param entryRepository
      */
     public EntryService(EntryRepository entryRepository) {
@@ -36,7 +36,6 @@ public class EntryService {
     }
 
     /**
-     *
      * @return Gibt alle Einträge zurück
      */
     public List<Entry> findAll() {
@@ -45,6 +44,7 @@ public class EntryService {
 
     /**
      * Löscht Eintrag
+     *
      * @param id
      */
     public void deleteEntry(long id) {
@@ -53,6 +53,7 @@ public class EntryService {
 
     /**
      * Bearbeitet Eintrag
+     *
      * @param entry
      */
     public void editEntry(Entry entry) {

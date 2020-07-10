@@ -6,46 +6,46 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ferienanfrage</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css"/>
     <script src="holiday.js" type="application/javascript"></script>
 </head>
 <body>
-    <form id="holidayForm">
-        <label for="location">Ortschaft:</label>
-        <input type="text" name="locationText" id="location" required>
-        <br>
-        <label for="checkIn">Start</label>
-        <input type="date" name="checkInDate" id="checkIn" required>
-        <input type="time" name="checkInTime" required>
+<form id="holidayForm">
+    <label for="location">Ortschaft:</label>
+    <input type="text" name="locationText" id="location" required>
+    <br>
+    <label for="checkIn">Start</label>
+    <input type="date" name="checkInDate" id="checkIn" required>
+    <input type="time" name="checkInTime" required>
 
-        <label for="checkOut">Ende</label>
-        <input type="date" name="checkOutDate" id="checkOut" required>
-        <input type="time" name="checkOutTime" required>
-        <br>
-        <label for="paid">Bezahlt?</label>
-        <select name="paid" id="paid">
-            <option value="true">Ja</option>
-            <option value="false">Nein</option>
-        </select>
-        <br>        <br>
-        <input type="button" value="Send Request" id="holidayRequest"  />
-    </form>
-        <table>
-            <thead>
-            <tr>
-                <th>Ortschaft</th>
-                <th>Start</th>
-                <th>Ende</th>
-                <th>Bezahlt</th>
-                <th> </th>
+    <label for="checkOut">Ende</label>
+    <input type="date" name="checkOutDate" id="checkOut" required>
+    <input type="time" name="checkOutTime" required>
+    <br>
+    <label for="paid">Bezahlt?</label>
+    <select name="paid" id="paid">
+        <option value="true">Ja</option>
+        <option value="false">Nein</option>
+    </select>
+    <br> <br>
+    <input type="button" value="Send Request" id="holidayRequest"/>
+</form>
+<table>
+    <thead>
+    <tr>
+        <th>Ortschaft</th>
+        <th>Start</th>
+        <th>Ende</th>
+        <th>Bezahlt</th>
+        <th></th>
 
-            </tr>
-            </thead>
-            <tbody id="requestDisplay">
-            <td>
-            <td colspan="3">Am Laden...</td>
-            </tr>
-            </tbody>
-        </table>
+    </tr>
+    </thead>
+    <tbody id="requestDisplay">
+    <td>
+    <td colspan="3">Am Laden...</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

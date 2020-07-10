@@ -23,6 +23,4 @@ public class SecurityConstants {
     public static final String ALL_HTML_URL = "/*.html";
 
 
-
-
 }

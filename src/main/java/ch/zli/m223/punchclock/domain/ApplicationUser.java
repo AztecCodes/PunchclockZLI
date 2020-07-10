@@ -37,6 +37,7 @@ public class ApplicationUser {
 
     /**
      * Lässt den Benutzernamen setzen
+     *
      * @param username
      */
     public void setUsername(String username) {
@@ -52,6 +53,7 @@ public class ApplicationUser {
 
     /**
      * Lässt Passwort des Benutzers setzen
+     *
      * @param password
      */
     public void setPassword(String password) {

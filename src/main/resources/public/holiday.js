@@ -40,7 +40,7 @@ const createRequest = () => {
 //Rendert alle Werte
 const renderRequests = () => {
 
-  //  const form = document.getElementById('holidayForm').style.display = "none";
+    //  const form = document.getElementById('holidayForm').style.display = "none";
     const display = document.querySelector('#requestDisplay');
     display.innerHTML = '';
     requests.forEach((request) => {
@@ -50,7 +50,7 @@ const renderRequests = () => {
         row.appendChild(createCell(new Date(request.checkIn).toLocaleString()));
         row.appendChild(createCell(new Date(request.checkOut).toLocaleString()));
         row.appendChild(createCell(request.paid));
-    //    row.appendChild(editActions(entry));
+        //    row.appendChild(editActions(entry));
 
         display.appendChild(row);
     });

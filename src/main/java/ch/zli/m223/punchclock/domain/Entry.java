@@ -9,7 +9,6 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /**
- *
  * @name Mattia Trottmann
  * @date 07.07.2020
  * @desc Entry Entity
@@ -43,6 +42,7 @@ public class Entry {
 
     /**
      * Setzt die ID des Eintrags
+     *
      * @param id
      */
     public void setId(Long id) {
@@ -58,6 +58,7 @@ public class Entry {
 
     /**
      * Setzt CheckIn-Zeit des Eintrags des Eintrags
+     *
      * @param checkIn
      */
     public void setCheckIn(LocalDateTime checkIn) {
@@ -73,6 +74,7 @@ public class Entry {
 
     /**
      * Setzt die CheckOut-Zeit des Eintrags
+     *
      * @param checkOut
      */
     public void setCheckOut(LocalDateTime checkOut) {

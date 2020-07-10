@@ -1,8 +1,6 @@
 package ch.zli.m223.punchclock.service;
 
-import ch.zli.m223.punchclock.domain.HolidayRequest;
 import ch.zli.m223.punchclock.domain.Job;
-import ch.zli.m223.punchclock.repository.HolidayRequestRepository;
 import ch.zli.m223.punchclock.repository.JobRepository;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +20,7 @@ public class JobService {
 
     /**
      * Repository Methode
+     *
      * @param jobRepository
      */
     public JobService(JobRepository jobRepository) {
@@ -45,6 +44,7 @@ public class JobService {
 
     /**
      * Löscht Job
+     *
      * @param id
      */
     public void deleteJob(long id) {
@@ -53,6 +53,7 @@ public class JobService {
 
     /**
      * Bearbeitet Job
+     *
      * @param job
      */
     public void editJob(Job job) {

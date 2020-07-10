@@ -7,10 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @name Mattia Trottmann
@@ -48,6 +44,7 @@ public class HolidayRequestController {
 
     /**
      * Anfrage zur Löschung eines Antrag
+     *
      * @param id
      */
     @DeleteMapping("/{id}")
@@ -58,6 +55,7 @@ public class HolidayRequestController {
 
     /**
      * Lässt Antrag bearbeiten
+     *
      * @param holidayRequest
      */
     @PutMapping("/{id}")

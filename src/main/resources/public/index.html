@@ -3,62 +3,66 @@
 
 @name Mattia Trottmann
 @date 07.07.2020
-@desc HTML
+@desc HTML für Punchclock Client
 
 -->
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Punchclock Client</title>
-        <link rel="stylesheet" type="text/css" href="style.css" />
-        <script src="script.js" type="application/javascript"></script>
-    </head>
-    <body>
-        <form id="createEntryForm">
-            <label for="checkIn">Beginn</label>
-            <input type="date" name="checkInDate" id="checkIn" required>
-            <input type="time" name="checkInTime" required>
-            <label for="checkOut">Ende</label>
-            <input type="date" name="checkOutDate" id="checkOut" required>
-            <input type="time" name="checkOutTime" required>
-            <input type="submit" value="Speichern" id="subButton" />
-            <br>
-            <input type="button" value="Stelle ein Urlaubsgesuch" id="holidayRequest"  onclick="location.href='http://localhost:8081/holiday.html'"  />
-            <br>
-            <input type="button" value="Benutzerverwaltung" id="userEdit"  onclick="location.href='http://localhost:8081/holiday.html'" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Punchclock Client</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="script.js" type="application/javascript"></script>
+</head>
+<body>
+<form id="createEntryForm">
+    <label for="checkIn">Beginn</label>
+    <input type="date" name="checkInDate" id="checkIn" required>
+    <input type="time" name="checkInTime" required>
+    <label for="checkOut">Ende</label>
+    <input type="date" name="checkOutDate" id="checkOut" required>
+    <input type="time" name="checkOutTime" required>
+    <input type="submit" value="Speichern" id="subButton"/>
+    <br>
+    <input type="button" value="Stelle ein Urlaubsgesuch" id="holidayRequest"
+           onclick="location.href='http://localhost:8081/holiday.html'"/>
+    <br>
+    <input type="button" value="Benutzerverwaltung" id="userEdit"
+           onclick="location.href='http://localhost:8081/useredit.html'"/>
 
-        </form>
-        <form id="createEntryForm2" >
-            <label for="checkIn2">Check in</label>
-            <input type="date" name="checkInDate2" id="checkIn2" required>
-            <input type="time" name="checkInTime2" id="checkInTime2" required>
-            <label for="checkOut2">Check out</label>
-            <input type="date" name="checkOutDate2" id="checkOut2" required>
-            <input type="time" name="checkOutTime2" id="checkOutTime2" required>
-            <input type="button" value="Bearbeiten" id="subButton2"  />
-            <input type="button" value="Stelle ein Urlaubsgesuch" id="holidayRequest2"  onclick="location.href='http://localhost:8081/holiday.html'" />
-            <input type="button" value="Benutzerverwaltung" id="userEdit2"  onclick="location.href='http://localhost:8081/holiday.html'" />
+</form>
+<form id="createEntryForm2">
+    <label for="checkIn2">Check in</label>
+    <input type="date" name="checkInDate2" id="checkIn2" required>
+    <input type="time" name="checkInTime2" id="checkInTime2" required>
+    <label for="checkOut2">Check out</label>
+    <input type="date" name="checkOutDate2" id="checkOut2" required>
+    <input type="time" name="checkOutTime2" id="checkOutTime2" required>
+    <input type="button" value="Bearbeiten" id="subButton2"/>
+    <input type="button" value="Stelle ein Urlaubsgesuch" id="holidayRequest2"
+           onclick="location.href='http://localhost:8081/holiday.html'"/>
+    <input type="button" value="Benutzerverwaltung" id="userEdit2"
+           onclick="location.href='http://localhost:8081/useredit.html'"/>
 
-        </form>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Beginn</th>
-                    <th>Ende</th>
-                    <th>Löschen</th>
-                    <th> </th>
+</form>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Beginn</th>
+        <th>Ende</th>
+        <th>Löschen</th>
+        <th></th>
 
-                </tr>
-            </thead>
-            <tbody id="entryDisplay">
-                <td>
-                    <td colspan="3">Am Laden...</td>
-                </tr>
-            </tbody>
-        </table>
-    </body>
+    </tr>
+    </thead>
+    <tbody id="entryDisplay">
+    <td>
+    <td colspan="3">Am Laden...</td>
+    </tr>
+    </tbody>
+</table>
+</body>
 </html>
