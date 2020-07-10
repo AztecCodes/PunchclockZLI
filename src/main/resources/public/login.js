@@ -1,5 +1,6 @@
 const URL = 'http://localhost:8081';
 let bearerKey = "";
+let saveUsername = "";
 
 //Erlaubt einen Login
 const openPunch = () => {
@@ -49,6 +50,8 @@ const loginUser = () => {
     credentialsLogin['username'] = document.getElementById("usernameField").value;
     credentialsLogin['password'] = document.getElementById("passwordField").value;
 
+    localStorage.setItem("savedUsername", credentialsLogin['username']);
+
     fetch(`${URL}/login`, {
         method: 'POST',
         headers: {
@@ -63,9 +66,6 @@ const loginUser = () => {
         bearerKey = localStorage.getItem("JWT");
         // alert(localStorage.getItem("JWT"));
 
-        //TODO Open index.html
-        // initXMLHttpRequest('GET', 'http://localhost:8081/index.html', bearerKey);
-        //openPunch();
         location.href = 'http://localhost:8081/index.html';
     });
 

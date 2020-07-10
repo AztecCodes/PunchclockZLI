@@ -46,6 +46,9 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, LOGIN_URL).permitAll()
                 .antMatchers(HttpMethod.GET, LOG_IN_URL).permitAll()
                 .antMatchers(ALL_HTML_URL).permitAll()
+
+                .antMatchers("/*.html").permitAll()
+
                 .antMatchers(CSS_URL).permitAll()
                 .antMatchers(ALL_JS_URL).permitAll()
                 .antMatchers(FAVICON_URL).permitAll()
