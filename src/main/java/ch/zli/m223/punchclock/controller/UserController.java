@@ -67,6 +67,20 @@ public class UserController {
     }
 
     /**
+     * Methode zur Änderung des Passworts
+     * @param user
+     */
+    @PostMapping("/change")
+    @ResponseStatus(HttpStatus.OK)
+    public void changePassword(@RequestBody ApplicationUser user) {
+
+            userRepository.delete(user);
+            user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+            userRepository.save(user);
+
+    }
+
+    /**
      * Anfrage zur Löschung eines Benutzerprofils
      * @param id
      */

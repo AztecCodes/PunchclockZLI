@@ -57,7 +57,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return userRepository.findAll();
     }
 
-
     /**
      * Löscht Benutzer
      * @param id
