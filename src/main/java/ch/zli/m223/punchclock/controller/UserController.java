@@ -9,6 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * @name Mattia Trottmann
@@ -24,7 +25,6 @@ public class UserController {
     //Variablen
     private final UserRepository userRepository;
     private final UserDetailsServiceImpl userDetailsService;
-
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     /**
@@ -40,11 +40,23 @@ public class UserController {
     }
 
     /**
+     * @return Gibt alle User zurück
+     */
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<ApplicationUser> getAllUsers() {
+        return userDetailsService.findAll();
+    }
+
+
+    /**
      * Methode zur Registrierung eines Benutzerkontos
      * @param user
      */
     @PostMapping("/sign-up")
     public void signUp(@RequestBody ApplicationUser user) {
+
+        //Überprüfung ob Benutzer existiert bei Erstellung überprüfen
         if(userRepository.findByUsername(user.getUsername()) == null) {
             user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
             userRepository.save(user);
