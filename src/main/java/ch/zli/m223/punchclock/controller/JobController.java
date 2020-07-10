@@ -42,7 +42,7 @@ public class JobController {
      * @param job
      * @return Gibt erstelltes Job-Profil zurück
      */
-    @PostMapping
+    @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public Job createJob(@Valid @RequestBody Job job) {
         return jobService.createJob(job);

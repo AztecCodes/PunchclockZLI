@@ -2,6 +2,32 @@ const URL = 'http://localhost:8081';
 let bearerKey = "";
 let saveUsername = "";
 
+let job1 = {};
+
+job1["jobTitle"] = "Informatiker";
+job1["hourlySalary"] = 125;
+
+let job2 = {};
+
+job2["jobTitle"] = "Architekt";
+job2["hourlySalary"] = 100;
+
+let job3 = {};
+
+job3["jobTitle"] = "Projektleiter";
+job3["hourlySalary"] = 250;
+
+let job4 = {};
+
+job4["jobTitle"] = "Designer";
+job4["hourlySalary"] = 100;
+
+let job5 = {};
+
+job5["jobTitle"] = "Fotograf";
+job5["hourlySalary"] = 10;
+
+
 //Erlaubt einen Login
 const openPunch = () => {
 
@@ -26,6 +52,7 @@ const createUser = () => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
+
         },
         body: JSON.stringify(credentials)
 
@@ -34,14 +61,20 @@ const createUser = () => {
     });
 };
 
-function initXMLHttpRequest(method, url, jwtoken) {
-    let xmlHttpRequest = new XMLHttpRequest();
-    xmlHttpRequest.open(method, url);
-    xmlHttpRequest.setRequestHeader('Authorization', jwtoken);
-    xmlHttpRequest.send();
-    window.location.href = url;
-    return xmlHttpRequest;
-}
+//Erstellt einen neuen Benutzer
+const createJobs= (job) => {
+
+    fetch(`${URL}/jobs/create`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+
+        },
+        body: JSON.stringify(job)
+
+    })
+};
+
 
 //Erlaubt einen Login
 const loginUser = () => {
@@ -88,4 +121,10 @@ const signActions = () => {
 document.addEventListener('DOMContentLoaded', function () {
     loginActions();
     signActions();
+    createJobs(job1);
+    createJobs(job2)
+    createJobs(job3)
+    createJobs(job4)
+    createJobs(job5)
+
 });

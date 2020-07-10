@@ -71,14 +71,12 @@ public class UserController {
      *
      * @param user
      */
-    @PostMapping("/change")
-    @ResponseStatus(HttpStatus.OK)
+    @PutMapping("/change")
+    @ResponseStatus(HttpStatus.CREATED)
     public void changePassword(@RequestBody ApplicationUser user) {
 
-        userRepository.delete(user);
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userRepository.save(user);
-
     }
 
     /**

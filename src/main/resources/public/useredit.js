@@ -9,7 +9,9 @@ let id = 16;
 const indexUsers = () => {
     fetch(`${URL}/users`, {
         method: 'GET',
-
+        headers: {
+            'Authorization': bearerKey,
+        },
 
     }).then((result) => {
         result.json().then((result) => {
@@ -30,6 +32,9 @@ const deleteUser = () => {
 
     fetch(`${URL}/users/${id}`, {
         method: 'DELETE',
+        headers: {
+            'Authorization': bearerKey,
+        },
 
     }).then((result) => {
         alert("Benutzerprofil gelöscht!");
@@ -40,7 +45,7 @@ const deleteUser = () => {
 const changePassword = () => {
 
     const getUsername = localStorage.getItem("savedUsername");
-
+   // alert(getUsername);
     let credentials = {};
 
     credentials['username'] = getUsername;
@@ -48,7 +53,7 @@ const changePassword = () => {
     const confirmPassword = document.getElementById("passwordConfirm").value;
 
     fetch(`${URL}/users/change`, {
-        method: '¨POST',
+        method: 'PUT',
         headers: {
             'Authorization': bearerKey,
             'Content-Type': 'application/json'
@@ -56,7 +61,7 @@ const changePassword = () => {
         body: JSON.stringify(credentials)
     }).then((result) => {
         result.json().then((result) => {
-            alert(result);
+            alert("passed");
         });
     });
 };
