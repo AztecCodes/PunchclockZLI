@@ -3,17 +3,24 @@ const URL = 'http://localhost:8081';
 let users = [];
 let findEntry = null;
 let bearerKey = localStorage.getItem("JWT");
+let id = 16;
 
 //Zeigt Einträge an
 const indexUsers = () => {
     fetch(`${URL}/users`, {
         method: 'GET',
-        headers: {
-            'Authorization': bearerKey,
-        },
+
+
     }).then((result) => {
         result.json().then((result) => {
-            users = result;
+
+            const getUsername = localStorage.getItem("savedUsername");
+
+
+            id = result.find((e) => e.username === getUsername).id;
+
+
+
         });
     });
 };
@@ -21,18 +28,11 @@ const indexUsers = () => {
 //Löscht einen Benutzer
 const deleteUser = () => {
 
-    indexUsers();
-    const getUsername = localStorage.getItem("savedUsername");
-
-    let id = users.find((element) => element.username === getUsername).id;
-
     fetch(`${URL}/users/${id}`, {
         method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-    }).then((result) => {
 
+    }).then((result) => {
+        alert("Benutzerprofil gelöscht!");
     });
 };
 
@@ -64,8 +64,9 @@ const changePassword = () => {
 //Event-Listener bei Laden vom Dokument
 document.addEventListener('DOMContentLoaded', function () {
     const changeButton = document.getElementById("changeButton");
-    changeButton.addEventListener('click', () => changePassword())
+    changeButton.addEventListener('click', changePassword)
     const deleteButton = document.getElementById("deleteButton");
-    changeButton.addEventListener('click', () => deleteUser())
+    deleteButton.addEventListener('click', deleteUser)
+    indexUsers();
 
 });

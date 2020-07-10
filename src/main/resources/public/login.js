@@ -50,7 +50,6 @@ const loginUser = () => {
     credentialsLogin['username'] = document.getElementById("usernameField").value;
     credentialsLogin['password'] = document.getElementById("passwordField").value;
 
-    localStorage.setItem("savedUsername", credentialsLogin['username']);
 
     fetch(`${URL}/login`, {
         method: 'POST',
@@ -61,6 +60,7 @@ const loginUser = () => {
 
     }).then((result) => {
 
+        localStorage.setItem("savedUsername",  credentialsLogin['username']);
 
         localStorage.setItem("JWT", result.headers.get("Authorization"));
         bearerKey = localStorage.getItem("JWT");

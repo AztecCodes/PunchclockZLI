@@ -52,9 +52,9 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .antMatchers(CSS_URL).permitAll()
                 .antMatchers(ALL_JS_URL).permitAll()
                 .antMatchers(FAVICON_URL).permitAll()
-                //.anyRequest().permitAll()
-
-                .anyRequest().authenticated()
+                .anyRequest().permitAll()
+                //TODO FIX
+              //  .anyRequest().authenticated()
                 .and()
                 .addFilter(new JWTAuthenticationFilter(authenticationManager()))
                 .addFilter(new JWTAuthorizationFilter(authenticationManager()))
