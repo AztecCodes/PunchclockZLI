@@ -54,11 +54,11 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .antMatchers(ALL_JS_URL).permitAll()
                 .antMatchers(FAVICON_URL).permitAll()
 
-           //     .antMatchers(ALL_HTML_URL).permitAll()
+                //     .antMatchers(ALL_HTML_URL).permitAll()
 
 
                 //TODO FIX
-                 .anyRequest().authenticated()
+                .anyRequest().authenticated()
                 .and()
                 .addFilter(new JWTAuthenticationFilter(authenticationManager()))
                 .addFilter(new JWTAuthorizationFilter(authenticationManager()))
@@ -66,11 +66,22 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
+    /**
+     * Konfigurator
+     *
+     * @param auth
+     * @throws Exception
+     */
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder);
     }
 
+    /**
+     * Source
+     *
+     * @return source
+     */
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

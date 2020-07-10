@@ -15,10 +15,20 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @SpringBootApplication
 public class PunchclockApplication {
 
+    /**
+     * Main-Methode der Applikation
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         SpringApplication.run(PunchclockApplication.class, args);
     }
 
+    /**
+     * Verschlüsselungsmethode
+     *
+     * @return
+     */
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();

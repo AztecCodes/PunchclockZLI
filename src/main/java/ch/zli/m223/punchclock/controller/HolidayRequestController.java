@@ -9,16 +9,23 @@ import javax.validation.Valid;
 import java.util.List;
 
 /**
- * @author  Mattia Trottmann
+ * @author Mattia Trottmann
  * @date 09.07.2020
- *  Controller für Entität HolidayRequest
+ * Controller für Entität HolidayRequest
  */
 
 @RestController
 @RequestMapping("/holidayrequests")
 public class HolidayRequestController {
+
+    //Variablen
     private final HolidayRequestService holidayRequestService;
 
+    /**
+     * Konstruktor
+     *
+     * @param holidayRequestService
+     */
     public HolidayRequestController(HolidayRequestService holidayRequestService) {
         this.holidayRequestService = holidayRequestService;
     }

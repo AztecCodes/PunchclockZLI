@@ -86,21 +86,17 @@ const zeigeLohn = () => {
 
     if (jobTitel === "Informatiker") {
         lohn = 125;
-    }
-    else if (jobTitel === "Architekt") {
+    } else if (jobTitel === "Architekt") {
         lohn = 100;
-    }
-     else if (jobTitel === "Fotograf") {
+    } else if (jobTitel === "Fotograf") {
         lohn = 10;
-    }
-     else if (jobTitel === "Designer") {
-    lohn = 100;
-    }
-     else {
+    } else if (jobTitel === "Designer") {
+        lohn = 100;
+    } else {
         lohn = 250;
     }
 
-    const paymentField = document.getElementById("hourlyPayment").innerHTML= "Lohn: " + lohn + "/Stunde" + " 42 Stunden/Woche";
+    const paymentField = document.getElementById("hourlyPayment").innerHTML = "Lohn: " + lohn + "/Stunde" + " 42 Stunden/Woche";
 
 }
 
@@ -163,7 +159,7 @@ const editEntry = (entry) => {
     let beginString = entryEdit['checkIn'];
     let beginStringOut = entryEdit['checkOut'];
 
-    //TODO Fix Edit
+    //Sollte Bug verhindern, welcher den Input des CheckIn und CheckOut zwei Stunden nach hinten stellt
 
     /*
     // For CheckIn

@@ -26,7 +26,6 @@ const indexUsers = () => {
             id = result.find((e) => e.username === getUsername).id;
 
 
-
         });
     });
 };
@@ -51,7 +50,7 @@ const deleteUser = () => {
 const changePassword = () => {
 
     const getUsername = localStorage.getItem("savedUsername");
-   // alert(getUsername);
+    // alert(getUsername);
     let credentials = {};
 
     credentials['username'] = getUsername;

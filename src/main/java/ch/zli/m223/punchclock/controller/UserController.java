@@ -27,7 +27,7 @@ public class UserController {
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     /**
-     * Controller des Users
+     * Konstruktor
      *
      * @param userRepository
      * @param bCryptPasswordEncoder

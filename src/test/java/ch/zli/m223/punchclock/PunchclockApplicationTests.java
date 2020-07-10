@@ -15,6 +15,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class PunchclockApplicationTests {
 
+    /**
+     * Lädt Kontext
+     */
     @Test
     public void contextLoads() {
     }

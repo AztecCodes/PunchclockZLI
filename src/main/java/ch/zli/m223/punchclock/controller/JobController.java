@@ -18,6 +18,7 @@ import java.util.List;
 @RequestMapping("/jobs")
 public class JobController {
 
+    //Variablen
     private final JobService jobService;
 
     /**

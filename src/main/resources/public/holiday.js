@@ -132,7 +132,7 @@ const renderRequests = () => {
         row.appendChild(createCell(new Date(request.checkIn).toLocaleString()));
         row.appendChild(createCell(new Date(request.checkOut).toLocaleString()));
         row.appendChild(createCell(request.paid));
-    //    row.appendChild(editActions(request));
+        //    row.appendChild(editActions(request));
 
         display.appendChild(row);
     });

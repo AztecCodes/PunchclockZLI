@@ -19,6 +19,11 @@ import java.util.List;
 public class EntryController {
     private final EntryService entryService;
 
+    /**
+     * Konstruktor
+     *
+     * @param entryService
+     */
     public EntryController(EntryService entryService) {
         this.entryService = entryService;
     }

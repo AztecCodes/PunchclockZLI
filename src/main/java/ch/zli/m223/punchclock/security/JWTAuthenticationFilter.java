@@ -31,6 +31,8 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     private final AuthenticationManager authenticationManager;
 
     /**
+     * Konstruktor
+     *
      * @param authenticationManager
      */
     public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
