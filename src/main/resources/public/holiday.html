@@ -24,13 +24,28 @@
         <br>
         <label for="paid">Paid?</label>
         <select name="paid" id="paid">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
         </select>
         <br>        <br>
-
-
         <input type="button" value="Send Request" id="holidayRequest"  />
     </form>
+        <table>
+            <thead>
+            <tr>
+                <th>Location</th>
+                <th>Check in</th>
+                <th>Check out</th>
+                <th>Paid</th>
+                <th> </th>
+
+            </tr>
+            </thead>
+            <tbody id="requestDisplay">
+            <td>
+            <td colspan="3">Loading...</td>
+            </tr>
+            </tbody>
+        </table>
 </body>
 </html>
