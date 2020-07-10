@@ -1,20 +1,32 @@
 //Variablen
 const URL = 'http://localhost:8081';
-let entries = [];
+let users = [];
 let findEntry = null;
 let bearerKey = localStorage.getItem("JWT");
-let getUsername = localStorage.getItem("savedUsername");
 
+//Zeigt Einträge an
+const indexUsers = () => {
+    fetch(`${URL}/users`, {
+        method: 'GET',
+        headers: {
+            'Authorization': bearerKey,
+        },
+    }).then((result) => {
+        result.json().then((result) => {
+            users = result;
+        });
+    });
+};
 
 //Löscht einen Benutzer
 const deleteUser = () => {
 
-    const credentials = {};
-    credentials['username'] = getUsername;
-    credentials['password'] = document.getElementById("passwordField").value;
-    const confirmPassword = document.getElementById("passwordConfirm").value;
+    indexUsers();
+    const getUsername = localStorage.getItem("savedUsername");
 
-    fetch(`${URL}/users/change`, {
+    let id = users.find((element) => element.username === getUsername).id;
+
+    fetch(`${URL}/users/${id}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
@@ -27,7 +39,10 @@ const deleteUser = () => {
 //Erstellt einen neuen Eintrag
 const changePassword = () => {
 
-    const credentials = {};
+    const getUsername = localStorage.getItem("savedUsername");
+
+    let credentials = {};
+
     credentials['username'] = getUsername;
     credentials['password'] = document.getElementById("passwordField").value;
     const confirmPassword = document.getElementById("passwordConfirm").value;
@@ -46,9 +61,11 @@ const changePassword = () => {
     });
 };
 
-
 //Event-Listener bei Laden vom Dokument
 document.addEventListener('DOMContentLoaded', function () {
     const changeButton = document.getElementById("changeButton");
     changeButton.addEventListener('click', () => changePassword())
+    const deleteButton = document.getElementById("deleteButton");
+    changeButton.addEventListener('click', () => deleteUser())
+
 });

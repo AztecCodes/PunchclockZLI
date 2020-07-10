@@ -9,9 +9,9 @@ import javax.validation.Valid;
 import java.util.List;
 
 /**
- * @name Mattia Trottmann
+ * @author  Mattia Trottmann
  * @date 09.07.2020
- * @desc Controller für Entität HolidayRequest
+ *  Controller für Entität HolidayRequest
  */
 
 @RestController

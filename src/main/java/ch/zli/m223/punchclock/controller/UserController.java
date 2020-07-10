@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 /**
- * @name Mattia Trottmann
+ * @author Mattia Trottmann
  * @date 07.07.2020
  * @desc User Controller
  */
