@@ -284,6 +284,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const createEntryFormButton = document.getElementById("subButton")
     createEntryFormButton.addEventListener('click', createEntry);
     document.getElementById("showPayment").disabled = true;
+    document.getElementById("showHours").disabled = true;
+
 
     zeigeLohn();
 
