@@ -18,15 +18,17 @@
     </head>
     <body>
         <form id="createEntryForm">
-            <label for="checkIn">Check in</label>
+            <label for="checkIn">Beginn</label>
             <input type="date" name="checkInDate" id="checkIn" required>
             <input type="time" name="checkInTime" required>
-            <label for="checkOut">Check out</label>
+            <label for="checkOut">Ende</label>
             <input type="date" name="checkOutDate" id="checkOut" required>
             <input type="time" name="checkOutTime" required>
-            <input type="submit" value="Save" id="subButton" />
+            <input type="submit" value="Speichern" id="subButton" />
             <br>
-            <input type="button" value="Make a Holiday Request" id="holidayRequest"  onclick="location.href='http://localhost:8081/holiday.html'"  />
+            <input type="button" value="Stelle ein Urlaubsgesuch" id="holidayRequest"  onclick="location.href='http://localhost:8081/holiday.html'"  />
+            <br>
+            <input type="button" value="Benutzerverwaltung" id="userEdit"  onclick="location.href='http://localhost:8081/holiday.html'" />
 
         </form>
         <form id="createEntryForm2" >
@@ -36,24 +38,25 @@
             <label for="checkOut2">Check out</label>
             <input type="date" name="checkOutDate2" id="checkOut2" required>
             <input type="time" name="checkOutTime2" id="checkOutTime2" required>
-            <input type="button" value="Edit" id="subButton2"  />
-            <input type="button" value="Make a Holiday Request" id="holidayRequest2"  onclick="location.href='http://localhost:8081/holiday.html'" />
+            <input type="button" value="Bearbeiten" id="subButton2"  />
+            <input type="button" value="Stelle ein Urlaubsgesuch" id="holidayRequest2"  onclick="location.href='http://localhost:8081/holiday.html'" />
+            <input type="button" value="Benutzerverwaltung" id="userEdit2"  onclick="location.href='http://localhost:8081/holiday.html'" />
 
         </form>
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Check in</th>
-                    <th>Check out</th>
-                    <th>Delete</th>
+                    <th>Beginn</th>
+                    <th>Ende</th>
+                    <th>Löschen</th>
                     <th> </th>
 
                 </tr>
             </thead>
             <tbody id="entryDisplay">
                 <td>
-                    <td colspan="3">Loading...</td>
+                    <td colspan="3">Am Laden...</td>
                 </tr>
             </tbody>
         </table>
