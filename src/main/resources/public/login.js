@@ -82,7 +82,7 @@ const loginUser = () => {
     const credentialsLogin = {};
     credentialsLogin['username'] = document.getElementById("usernameField").value;
     credentialsLogin['password'] = document.getElementById("passwordField").value;
-
+    const job = document.getElementById("jobSpinner").value;
 
     fetch(`${URL}/login`, {
         method: 'POST',
@@ -94,8 +94,9 @@ const loginUser = () => {
     }).then((result) => {
 
         localStorage.setItem("savedUsername",  credentialsLogin['username']);
-
+        localStorage.setItem("savedJob",  credentialsLogin['job']);
         localStorage.setItem("JWT", result.headers.get("Authorization"));
+
         bearerKey = localStorage.getItem("JWT");
         // alert(localStorage.getItem("JWT"));
 
@@ -122,9 +123,9 @@ document.addEventListener('DOMContentLoaded', function () {
     loginActions();
     signActions();
     createJobs(job1);
-    createJobs(job2)
-    createJobs(job3)
-    createJobs(job4)
-    createJobs(job5)
+    createJobs(job2);
+    createJobs(job3);
+    createJobs(job4);
+    createJobs(job5);
 
 });
